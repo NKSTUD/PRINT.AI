@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<div class="main-container">
+    {% block menu %}
+        {% include 'menu.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <div id="projects__list" hx-get="{% url 'projects-list' %}" hx-trigger="load"></div>
+    {% endblock %}
+</div>
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

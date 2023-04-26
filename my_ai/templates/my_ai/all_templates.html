@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>All Templates</title>
+{% endblock %}
+
+{% block menu %}
+    {% include 'menu.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="row g-3">
+        <h4>Your favorite templates </h4>
+
+        <h6>We detected that you love these templates </h6>
+        {% for template in user_favorite_templates %}
+            <a class="col-md-3" href="{% url 'create_product_copy' %}?q={{ template.name }}"
+            >
+                <div class="card h-100">
+                    <div class="card-header bg-white">{{ template.name }}</div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            {{ template.description }}
+                            <i class="{{ template.icon_class }} template-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">{{ template.num_projects }} Projects created</div>
+                </div>
+            </a>
+        {% endfor %}
+        <hr>
+        <h4>Our Users favorite templates </h4>
+        <h6>Ours users prefer theses templates </h6>
+        {% for template in most_common_templates %}
+            <a class="col-md-3" href="{% url 'create_product_copy' %}?q={{ template.name }}"
+            >
+                <div class="card h-100">
+                    <div class="card-header bg-white">{{ template.name }}
+                        <i class="{{ template.icon_class }} template-icon"></i></div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            {{ template.description }}
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">{{ template.num_projects }} Projects created</div>
+                </div>
+            </a>
+        {% endfor %}
+        <hr>
+        <h4>All templates </h4>
+        {% for template in all_templates %}
+            <a class="col-md-3" href="{% url 'create_product_copy' %}?q={{ template.name }}"
+               id="common_templates"
+            >
+                <div class="card h-100">
+                    <div class="card-header bg-white">{{ template.name }}
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p class="template-description">{{ template.description }}  </p>
+                            <i class="{{ template.icon_class }} template-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">{{ template.num_projects }} Projects created</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+
+
+{% endblock %}

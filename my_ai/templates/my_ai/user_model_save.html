@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title> Vos modèles enregistrées</title>
+{% endblock %}
+
+
+
+{% block content %}
+    <style>
+        .cardsave.htmx-swapping {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
+    <div hx-target="#form_and_saved" _="on htmx:afterOnLoad take .selected for event.target">
+        <a hx-get="{% url 'create_product_copy' %}"
+           class=" text-decoration-none">
+            Créer un modèle
+        </a>
+    </div>
+    {% if all_answers %}
+        <div class="row flex flex-column justify-content-center">
+            <div class="col-md-7">
+                <div id="all_cards">
+                    {% for answer in all_answers %}
+                        {% if request.user == answer.client %}
+                            <div class="col mb-4">
+                                <form method="POST" class="cardsave col">
+                                    {% csrf_token %}
+                                    <div id="{{ answer.id }}">
+                                        <h5 class="card-title">{{ answer.product_name }}</h5>
+                                        <textarea id="answer_ai"
+                                                  cols=""
+                                                  rows="8x"
+                                                  class="answer form-control mb-2"
+                                                  style="background-color:#E9ECEF">{{ answer.ai_answer }}</textarea>
+                                        <input name="product_name3" type="hidden" value="{{ answer.product_name }}">
+                                        <input name="ai_answer3" type="hidden" value="{{ answer.ai_answer }}">
+                                        <input name="rpoject_name" type="hidden" value="{{ answer.project_name }}">
+                                        <input name="template" type="hidden"
+                                               value="{{ answer.project_name.project_template }}">
+                                        <input name="username" type="hidden" value="{{ answer.client }}">
+                                    </div>
+                                    <div class="d-flex justify-content-center" role="group">
+                                        <button class="btn btn-sm btn-outline-secondary me-1"
+                                                onclick="copy_text({{ answer.id }})"
+                                                type="button"
+                                        >copy
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger "
+                                                id="{{ btn_answer.id }}"
+                                                hx-delete="{% url 'remove-answer' answer.id %}"
+                                                hx-target="closest form"
+                                                hx-swap="outerHTML swap:0.5s"
+                                                type="submit">
+                                            Remove
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="row mt-2">
+                        <div class="col mx-auto">
+                            <button id="copy_all" class="btn btn-primary "
+                                    onclick="copy_all_card()">Copier tout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <h4 class="alert alert-primary text-center m-5"> Vous n'avez aucun model enregistré!</h4>
+    {% endif %}
+{% endblock %}
+
+
+

@@ -1,0 +1,400 @@
+@import url('https://fonts.cdnfonts.com/css/circular-std');
+@import url('https://fonts.cdnfonts.com/css/gotham');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('https://fonts.cdnfonts.com/css/aktiv-grotesk-cd-trial');
+@import url('https://fonts.cdnfonts.com/css/brandon-grotesque');
+
+/*
+font-family: 'Aktiv Grotesk Cd Trial', sans-serif;
+font-family: 'Aktiv Grotesk Ex Trial', sans-serif;
+font-family: 'Aktiv Grotesk VF Trial', sans-serif;
+font-family: 'Aktiv Grotesk Trial', sans-serif;
+
+*/
+
+
+/* ===== =======VARIABLES ============= */
+
+:root {
+    --color-dark: hsl(252, 30%, 17%);
+    --color-light: hsl(252, 30%, 95%);
+    --color-gray: hsl(252, 15%, 65%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-succes: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-black: hsl(252, 30%, 10%);
+    --color-white: white;
+
+    /*COULEUR A TESTER*/
+    --color-turquoise: #08D9D6;
+    --color-blue: #3498db;
+    --color-yellow: #f1c40f;
+    --color-orange: #e67e22;
+    --color-red: #FF2E63;
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+    --sticky-top-left: 5rem;
+    --sticky-top-right: -18rem;
+
+}
+
+*,
+*::before, *::after {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+}
+
+a:hover {
+    color: inherit;
+}
+
+
+body {
+    font-family: 'Brandon Grotesque', sans-serif;
+    background: var(--color-white);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+
+}
+
+
+/* ===== =======NAVBAR ============= */
+nav {
+    width: 100%;
+    background: var(--color-light);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 510;
+    transition: all 0.3s ease;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-turquoise);
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+.nav-logo span {
+    color: #e63946;
+    font-weight: 700;
+}
+
+.nav-links a {
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-turquoise);
+}
+
+
+main {
+    position: relative;
+    top: 5.4rem;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns:  20% auto;
+    column-gap: 2rem;
+    position: relative;
+}
+
+.menu-container {
+    height: 100vh;
+    position: sticky;
+    top: 5.4rem;
+    padding: 2rem;
+    background: var(--color-turquoise);
+    transition: all 0.3s ease;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+.single-column {
+    display: block;
+}
+
+
+.menu-container a {
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+
+}
+
+.menu-container a:hover {
+    color: var(--color-light);
+
+}
+
+.menu-container > a:first-child {
+    font-size: 1rem;
+}
+
+/*RESPONSIVE*/
+/* For screens smaller than 768px */
+/*@media (max-width: 767px) {
+    .menu-container {
+        height: auto;
+        position: static;
+        top: initial;
+        padding: 0;
+        display: none;
+    }
+
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0 0.5rem;
+    }
+
+    .menu-container a {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .menu-container > a:first-child {
+        font-size: 1.2rem;
+    }
+}*/
+
+
+.index-container {
+    margin-bottom: 2rem;
+}
+
+
+button {
+    background-color: #FCFE19;
+}
+
+h1 {
+    color: #2C7A7B;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+[class='card h-100']:hover {
+    -webkit-box-shadow: 5px 5px 15px -5px #000000;
+    box-shadow: 5px 5px 15px -5px #000000;
+    transform: translateY(-5px);
+}
+
+[class='card h-100'] {
+    transition: all 0.3s ease;
+}
+
+/* Auto expandable textarea*/
+
+textarea {
+    height: auto;
+    min-height: 100px;
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Brandon Grotesque', sans-serif;
+    font-size: 1.2rem;
+    color: #2C7A7B;
+}
+
+
+.swal-modal {
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+
+input {
+    background-color: #E8F0FE;
+}
+
+
+
+.template-list:not(.hidden_list) {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 100%;
+}
+
+
+div.htmx-swapping form {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+
+pre {
+    width: 480px;
+    white-space: pre-wrap;
+    font-family: 'Brandon Grotesque', sans-serif;
+    font-size: 1.2rem;
+}
+
+.user-profile {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #E8F0FE;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0.5rem auto;
+}
+
+.template-icon {
+    color: var(--color-turquoise);
+    font-size: 1.5rem;
+}
+
+.template-name {
+    color: #372868;
+    font-weight: bold;
+    font-size: 1rem;
+
+
+}
+
+#user_description {
+    overflow: hidden;
+    display: block;
+}
+
+#template_name {
+    background-color: var(--color-turquoise);
+}
+
+.btn-close {
+    background-color: var(--color-red);
+}
+
+/* ===== =======PASSWORD CHANGE STYLE ============= */
+
+
+/* ===== =======LOGIN STYLE ============= */
+
+.login-card, .signup-form {
+    width: 400px;
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 5rem auto 0;
+}
+
+.login-card h5 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.login-card button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.menu-container .template-category {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.menu-container .category-toggle {
+    margin-right: 10px;
+    font-size: 1.2rem;
+
+}
+
+.template-list {
+    display: none;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    font-size: small;
+}
+
+.swal2-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 2rem;
+    border-radius: 5%;
+    text-align: center;
+    font-size: 0.5rem;
+
+}
+
+
+.menu-bars {
+    display: none;
+    color: var(--color-dark);
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu-container {
+        height: auto;
+        position: static;
+        top: initial;
+        padding: 0;
+        display: none;
+    }
+
+    .main-container {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+}
+

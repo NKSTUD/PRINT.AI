@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Payment</title>
+{% endblock %}
+
+
+{% block content %}
+    <a href="{% url 'pricing' %}">Return to the pricing page</a>
+    <div class="container-fluid">
+        <form action="" method="POST" class="row">
+            <div class="col-md-6 mx-auto g-4">
+                <label for="card_last_name"> Enter the last name on your card here</label>
+                <input type="text" id="card_last_name" class="form-control my-3">
+                <label for="firstname"> Enter your first name here</label>
+                <input type="text" id="firstname" class="form-control">
+                <button type="submit" class="btn btn-success mt-3">move to premium membership</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

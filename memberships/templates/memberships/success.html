@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Thank You</title>{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col">
+            <a href="{% url 'home' %}">Back to home</a>
+            <a href="{% url 'pricing' %}">Pricing</a>
+            <p>
+                Thank you for your subscription
+            </p>
+            <p>
+                We sent you an email
+            </p>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

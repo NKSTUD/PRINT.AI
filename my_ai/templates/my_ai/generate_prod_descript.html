@@ -1,0 +1,55 @@
+{% include 'head.html' %}
+
+{% block content %}
+    <div id="ai_response" class="my-2 d-block ">
+        <div class="d-flex flex-column" id="generateDescription">
+            {% for ai_answer,total_tokens in ai_answers %}
+                <pre
+                        contenteditable="true" id="{{ ai_answers|wordcount }}" class="my-2 p-2">
+                   {{ ai_answer }}
+
+                </pre>
+                {{ total_tokens }} Tokens <br>
+                <div class="d-flex justify-content-center" role="group">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="ai_answer" value="{{ ai_answer }}">
+                        <button id="save btn-{{ ai_answer|wordcount }}"
+                                class="btn btn-outline-success btn-sm"
+                                type="submit"
+                                hx-post="{% url 'save-answer' %}">
+
+                            <i id="saved_btn" class="fa-solid fa-heart-half-stroke"></i> save
+                            <span class="htmx-indicator spinner-border spinner-border-sm" role="status"
+                                  aria-hidden="true"></span>
+                        </button>
+                    </form>
+
+                    <button type="button" class="btn btn-sm btn-outline-primary mx-1"
+                            onclick="copy_text({{ ai_answers|wordcount }})"
+                    >
+                        copy
+                    </button>
+
+                    <button type=" submit"
+                            class="btn btn-sm btn-outline-danger"
+                            hx-push-url="false"
+                            hx-delete="{% url "remove_not_committed_answer" %}"
+                            hx-target="#ai_response">
+                        remove
+                        <span class=" htmx-indicator sr-only">Loading...</span>
+                        <span class="htmx-indicator spinner-border spinner-border-sm" role="status"
+                              aria-hidden="true"></span>
+                    </button>
+
+                </div>
+
+            {% endfor %}
+        </div>
+        <a href="#" id="user_words_count" hx-swap-oob="true"> Total Words : {{ request.user.number_of_words }}</a>
+    </div>
+    <div id="textarea_script"></div>
+{% endblock %}
+
+
+

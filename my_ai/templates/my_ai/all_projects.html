@@ -1,0 +1,114 @@
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+
+
+<div class=" row d-flex justify-content-start " id="template ">
+    {% if  projects.number == 1 %}
+        <h4>Popular templates</h4>
+        <div class="row d-flex justify-content-start g-3">
+            {% for template in most_common_templates %}
+                <a class="col-md-3" href="{% url 'create_product_copy' %}?q={{ template.name }}">
+
+                    <div class="card h-100">
+                        <div class="card-header bg-white template-name">{{ template.name | truncatechars:20 }}
+                            <i class="template-icon {{ template.icon_class }}"></i>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text template-decription">
+                                {{ template.description }}<br>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">{{ template.num_projects }} Projects created</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div>
+            <h4 class="text mt-3 ">You have {{ all_projects.count }} projects</h4>
+            <button class="btn btn-danger mb-3" type="submit"
+                    hx-get="{% url 'delete_blank_projects' %}"
+
+            >
+
+                Delete all blank
+                projects {{ user_blank_projects.count }}
+                <span class=" htmx-indicator spinner-border spinner-border-sm" role="status"
+                      aria-hidden="true"></span>
+            </button>
+            <label for="search_projects"></label>
+            <input type="text" placeholder="search projects...by project name, product or template"
+                   id="search_projects"
+                   class="form-control"
+                   name="project_search"
+                   hx-get="{% url 'projects-list' %}"
+                   hx-target="#all_projects"
+                   hx-trigger="keyup"
+                   hx-select="#all_projects"
+            >
+
+        </div>
+
+    {% endif %}
+
+    <div id="all_projects" class="row d-flex justify-content-between">
+
+        {% if searched and projects %}
+            <div class="mt-4">
+                <p><span class="text fw-bolder ms-1">{{ all_projects.count }}</span> Results found for <span
+                        class="text fw-bolder ms-1">{{ searched }}</span></p>
+            </div>
+        {% endif %}
+        {% if searched and not projects %}
+            <div class="mt-4">
+                <p>There is not projects found for <span class="text fw-bolder ms-1">{{ searched }}</span></p>
+            </div>
+        {% endif %}
+
+        {% for project in projects %}
+            <a
+                    href="{% url 'update-project' project.pk %}?q={{ project.template_name }}"
+
+                    class=" all_project text col-md-3 g-4">
+
+                <div class="card h-100">
+                    <div class="card-header bg-white card-title d-flex justify-content-between">
+                        {{ project.project_name | truncatechars:20 }}{% if project.project_name == "Untitled" %}
+                            -
+                            {{ forloop.counter }}{% endif %}
+                        <button type="submit"
+                                class="btn btn-danger btn-close text-white"
+                                hx-delete="{% url 'delete-project' project.id %}"
+                                hx-confirm="Are you sure to delete this project?"
+                                hx-target="#main__section"
+
+                        ></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p>{{ project.product_name|truncatechars:40 }}</p>
+                            <p>{{ project.user_description |truncatewords:5 }}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center m-3">
+                        <button class="btn btn-sm "
+                                id="template_name">{{ project.template_name | truncatechars:20 }}</button>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% if projects.has_next %}
+    <div hx-get="{% url 'projects-list' %}?page={{ projects.next_page_number }}" hx-trigger="revealed"
+         hx-swap="afterend" hx-target="">
+        <div class="spinner-border text-center text-primary htmx-indicator" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+{% endif %}
+

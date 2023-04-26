@@ -1,0 +1,76 @@
+<div class="menu-container">
+    <a href="{% url 'templates_View' %}">
+        Templates
+    </a>
+    <hr>
+    <label for="nav-search"></label>
+    <input type="search" id="nav-search"
+           hx-get="{% url 'home' %}"
+           name="search"
+           hx-target="#results"
+           hx-swap="innerHTML"
+           hx-trigger="keyup changed delay:500ms"
+           class="form-control mb-3"
+           hx-select="#searched"
+           placeholder="search templates..."
+    >
+
+    <div id="results">
+
+    </div>
+
+    <div>
+        {% if not results %}
+            {% for templateCategory in all_template_categories %}
+                <div class="template-category">
+                    <span class="category-toggle"
+                    ><i class="uil uil-angle-right"></i></span>{{ templateCategory.name }}
+                </div>
+                <div class="template-list hidden_list mt-1">
+                    {% for template in templateCategory.templates_set.all %}
+                        <a href="{% url 'create_product_copy' %}?q={{ template.name }}"
+
+                        >
+                            {{ template.name }} <span class="text-danger fw-bold"></span>
+                        </a>
+                    {% endfor %}
+                    <hr>
+
+                </div>
+            {% empty %}
+            {% endfor %}
+        {% endif %}
+
+        {% if searched %}
+
+            <div id="searched" class="my-2">
+                <hr>
+                {% for template in results %}
+                    <a href="{% url 'create_product_copy' %}?q={{ template.name }}">
+                        {{ template.name }}
+                    </a>
+                    <br>
+                {% empty %}
+                    <span class="text-danger">No Templates Found for {{ searched }}</span>
+                {% endfor %}
+                <hr>
+            </div>
+
+        {% endif %}
+
+    </div>
+    <span class="user-profile">
+</span>
+
+</div>
+
+<script>
+    template_category = document.querySelectorAll('.template-category')
+    template_category.forEach(category => {
+        category.addEventListener('click', () => {
+            category.nextElementSibling.classList.toggle('hidden_list')
+            category.firstElementChild.firstElementChild.classList.toggle('uil-angle-down')
+            category.firstElementChild.firstElementChild.classList.toggle('uil-angle-right')
+        })
+    })
+</script>

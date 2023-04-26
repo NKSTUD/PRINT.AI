@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    <title>{{ project.project_name }}</title>
+{% endblock %}
+
+<!-- VERTICAL MENU-->
+{% block menu %}
+    <div class="menu-container">
+        <a href="{% url 'templates_View' %}">
+            Templates
+        </a>
+        <hr>
+
+        <label for="nav-search"></label>
+        <input type="search" id="nav-search"
+               hx-get="{% url 'home' %}"
+               name="search"
+               hx-target="#results"
+               hx-swap="innerHTML"
+               hx-trigger="keyup changed delay:500ms"
+               class="form-control mb-3"
+               hx-select="#searched"
+               placeholder="search templates..."
+        >
+        <div id="results">
+
+        </div>
+        <div>
+            {% if not results %}
+                {% for templateCategory in all_template_categories %}
+                    <div class="template-category" onclick="toggleCategory(this)">
+                    <span class="category-toggle"
+                    ><i class="uil uil-angle-right"></i></span>{{ templateCategory.name }}
+                    </div>
+                    <div class="template-list hidden_list">
+                        {% for template in templateCategory.templates_set.all %}
+                            <a href="{% url 'update-project' project.id %}?q={{ template.name }}"
+
+                            >
+                                {{ template.name }} <span class="text-danger fw-bold"></span>
+                            </a>
+                        {% endfor %}
+                        <hr>
+                    </div>
+                {% empty %}
+                {% endfor %}
+            {% endif %}
+
+            {% if searched %}
+
+                <div id="searched" class="my-2">
+                    <hr>
+                    {% for template in results %}
+                        <a href="{% url 'update-project' project.id %}?q={{ template.name }}">
+                            {{ template.name }}
+                        </a>
+                        <br>
+                    {% empty %}
+                        <span class="text-danger">No Templates Found for {{ searched }}</span>
+                    {% endfor %}
+                    <hr>
+                </div>
+
+            {% endif %}
+        </div>
+        <span class="user-profile">
+</span>
+
+    </div>
+
+{% endblock %}
+
+<!-- FORM -->
+
+{% block content %}
+    <div class="d-flex row justify-content-between">
+        <div class="col-md-6 p-4">
+            <div class="d-flex justify-content-between">
+                <h4>{{ user_template_name }}</h4>
+                <div id="tab-contents" hx-trigger="load">
+                </div>
+                <ul class="nav nav-pills mb-3" id="pills-tab" hx-target="#pills-tabContent"
+                    _="on htmx:afterOnLoad take .selected for event.target" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="form_create-tab" data-bs-toggle="pill"
+                                data-bs-target="#form_create"
+                                type="button" role="tab" aria-controls="form_create" aria-selected="true">Create a copy
+                        </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="models_saved-tab" data-bs-toggle="pill"
+                                data-bs-target="#models_saved"
+                                type="button" role="tab" aria-controls="models_saved" aria-selected="false">
+                            Saved({{ project.aidescription_set.count }})
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent" hx-trigger="load">
+                <div class="tab-pane fade show active" id="form_create" role="tabpanel"
+                     aria-labelledby="form_create-tab">
+                    <form
+                            id="inputForm2" method="POST"
+                            name="userInputForm">
+                        {% csrf_token %}
+
+                        {% load widget_tweaks %}
+                        <div class="d-flex flex-column">
+
+                            <div class=" row flex flex-justify-content-between">
+                                <div class="fieldWrapper col mb-4 ">
+
+                                    <label class="form-label fw-semibold mb-0"
+                                           for="{{ form.project.id_for_label }}">
+                                        Your Project Name Here
+                                    </label>
+                                    {{ form.project_name | attr:"class:form-control" |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
+                                </div>
+                                <div class="fieldWrapper col">
+                                    {{ form.output_language.errors }}
+                                    <label class="form-label fw-semibold mb-0"
+                                           for="{{ form.output_language.id_for_label }}">
+                                        output language:</label>
+                                    {{ form.output_language |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
+                                </div>
+                            </div>
+
+                            {% if template_object.is_product_name_required %}
+                                <div class="fieldWrapper mb-4">
+                                    {{ form.product_name.errors }}
+                                    <label class="form-label fw-semibold mb-0"
+                                           for="{{ form.product_name.id_for_label }}">
+                                        {{ template_object.product_name_label }}
+                                        <i data-bs-toggle="tooltip" data-bs-placement="top"
+                                           title="This value is required."
+                                           class="fa-solid fa-circle-exclamation"></i>
+                                    </label>
+                                    {{ form.product_name|attr:"class:form-control" |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
+                                </div>
+                            {% endif %}
+                            <div class="fieldWrapper">
+                                {{ form.user_description.errors }}
+                                <label class="form-label fw-semibold mb-0"
+                                       for="{{ form.user_description.id_for_label }}">{{ template_object.user_description_label }}
+                                    :</label>
+                                {{ form.user_description |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
+                            </div>
+                            <div class="fieldWrapper mt-3">
+                                {{ form.tone_type.errors }}
+                                <label class="form-label fw-semibold mb-0"
+                                       for="{{ form.tone_type.id_for_label }}">
+                                    Tone:</label>
+                                {{ form.tone |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
+                            </div>
+                            <div class="fieldWrapper mt-3">
+                                <label class="form-label fw-semibold mb-0"
+                                       for="number_of_request">
+                                    Number of variants:</label>
+                                <input id="number_of_request" type="number"
+                                       value="1"
+                                       max="10"
+                                       min="1"
+
+                                       name="number_of_variant" class="form-control">
+                            </div>
+                            <button
+                                    type="submit"
+                                    form="InputForm"
+                                    hx-post="{% url 'createProductDescription' %}"
+                                    hx-target="closest button"
+                                    hx-swap="beforebegin"
+                                    {#                                    hx-trigger="click[document.getElementById('user_put').value !=='']"#}
+                                    class="btn btn-primary rounded-pill mb-4 mt-2"
+                                    id="submit">
+                                Submit
+                                <span class=" htmx-indicator spinner-border spinner-border-sm" role="status"
+                                      aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="models_saved" role="tabpanel" aria-labelledby="models_saved-tab">
+                    {% for description in project.aidescription_set.all %}
+                        {% if description.template_name is not None %}
+                            <span>{{ description.template_name }}</span>
+                        {% else %}
+                            <span>{{ description.ai_product_name.template_name }}</span>
+                        {% endif %}
+                        <div class="row d-flex justify-content-center">
+                            <pre>{{ description.ai_answer }}</pre>
+                            <button class="btn btn-outline-secondary  btn-sm">copier</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" id="col_tiny">
+            <button  id="tiny_display" class="btn btn-primary" style="display: none">Hide editor</button>
+            <div id="editor">
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+
+        tinymce.init({
+            height: '100vh',
+            selector: '#editor',
+            plugins: [
+                'advlist', 'autolink',
+                'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+                'fullscreen', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+            ],
+            toolbar: 'undo redo | a11ycheck casechange blocks | bold italic  | alignleft aligncenter alignright alignjustify |' +
+                'bullist numlist checklist outdent indent | removeformat | code table help'
+        });
+
+        function toggleCategory(category) {
+            category.nextElementSibling.classList.toggle('hidden_list')
+            category.firstElementChild.firstElementChild.classList.toggle('uil-angle-down')
+            category.firstElementChild.firstElementChild.classList.toggle('uil-angle-right')
+        }
+
+        function autoHeight(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        const toggleEditorButton = document.getElementById('tiny_display');
+        toggleEditorButton.addEventListener('click', function () {
+            const editorContainer = document.querySelector('.tox-tinymce');
+            if (editorContainer.style.display === 'none') {
+                editorContainer.style.display = 'block';
+                toggleEditorButton.textContent = 'Hide editor';
+            } else {
+                editorContainer.style.display = 'none';
+                toggleEditorButton.textContent = 'Show editor';
+            }
+        });
+
+    </script>
+{% endblock %}

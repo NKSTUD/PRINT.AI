@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %} <title>Profile</title> {% endblock %}
+{% block content-class %} single-column {% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row my-4">
+
+            <div class="col-md-4 mx-auto text-center">
+                <h2 class="text-success">Your Billing Infos</h2>
+                {% if user_subscription %}
+                    <p>{{ user_subscription.user_membership }}</p>
+                    <p>You're in <span
+                            class="fw-bold">{{ user_subscription.user_membership.membership.membership_type }}</span>
+                        plan</p>
+                    <p>{{ user_subscription.user_membership.membership.membership_price_per_period }}</p>
+                    <p>Created date : <span class="fw-bold">{{ user_subscription.get_created_date }}</span></p>
+                    <p>Next billing date : <span class="fw-bold">{{ user_subscription.get_next_billing_date }}</span>
+                    </p>
+                {% else %}
+                    <p>You're in Free Plan</p>
+                    <p>Your credit : <span class="fw-bold">10000 words</span></p>
+                    <p>You generated : <span class="fw-bold">{{ request.user.number_of_words }} words</span></p>
+                    <p>You remaining number of words : <span
+                            class="fw-bold">{{ number_of_words_remaining }} words</span></p>
+                    <p><a class="btn btn-success" href="{% url 'pricing' %}">Up to Premium</a></p>
+                {% endif %}
+                <a class="btn" href="{% url 'home' %}">Back to Home</a>
+                {% if not user_subscription.cancelled %}
+                    <button class="btn btn-outline-danger text-dark"
+                            hx-post="{% url 'cancel-subscription' %}"
+                            hx-swap="outerHtml"
+                            hx-target="#message"
+                    >
+                        Cancel your subscription
+                    </button>
+                {% else %}
+                    <button class="btn btn-outline-danger text-dark"
+                            hx-post="{% url 'resume-subscription' %}"
+                            hx-swap="outerHtml"
+                            hx-target="#message">
+                        Resume your subscription
+                    </button>
+                {% endif %}
+                <div class="alert mt-2" id="message"></div>
+            </div>
+            <div class="col-md-4 mx-auto ">
+                <h2 class="text-success">Update Your Profile </h2>
+                <form id="profile_update_form" method="POST" class="form-signin">{% csrf_token %}
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}
+                    {{ form.email.label_tag }}
+                    {{ form.email |attr:"class:form-control" | attr:"placeholder:New Email" }}
+                    {{ form.old_password.label_tag }}
+                    {{ form.password1.label_tag }}
+                    {{ form.password1| attr:"placeholder:New Password" |attr:"class:form-control" }}
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 | attr:"placeholder:Confirm Password" |attr:"class:form-control mb-2" }}
+
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                    <button id="id_submit_btn" class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

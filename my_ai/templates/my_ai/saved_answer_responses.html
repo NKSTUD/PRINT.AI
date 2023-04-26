@@ -1,0 +1,25 @@
+{% block content %}
+    <!--Generate_Prod_Description.html-->
+                            <i  id="saved_btn" class="fa-solid fa-heart-half-stroke"></i> saved !
+
+
+
+    <!--Content for Update_product_project-->
+    <button hx-swap-oob="true" class="nav-link" id="models_saved-tab" data-bs-toggle="pill"
+            data-bs-target="#models_saved"
+            type="button" role="tab" aria-controls="models_saved" aria-selected="false">
+        Saved({{ project.aidescription_set.count }})
+    </button>
+
+    <div hx-swap-oob="true" class="tab-pane fade" id="models_saved" role="tabpanel" aria-labelledby="models_saved-tab">
+        {% for description in project.aidescription_set.all %}
+            <div class="row d-flex justify-content-center">
+            <div class="mt-3">{{ description.template_name }}</div>
+                <pre>{{ description.ai_answer }}</pre>
+                <button class="btn btn-outline-secondary  btn-sm">copier</button>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
