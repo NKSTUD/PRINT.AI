@@ -1,1 +1,1 @@
-web gunicorn answer_ai.wsgi:application --log-file -
+web: gunicorn answer_ai.wsgi:application --log-file -
