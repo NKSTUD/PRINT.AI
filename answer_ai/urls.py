@@ -9,10 +9,13 @@ from django.urls import path, include
 from my_ai.views import index
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('', index, name='home'),
-                  path('printai/', include('my_ai.urls')),
-                  path('accounts/', include('accounts.urls')),
-                  path('memberships/', include('memberships.urls')),
-                  path('tinymce/', include('tinymce.urls')),
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('admin/', admin.site.urls),
+    path('', index, name='home'),
+    path('printai/', include('my_ai.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('memberships/', include('memberships.urls')),
+    path('tinymce/', include('tinymce.urls')),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

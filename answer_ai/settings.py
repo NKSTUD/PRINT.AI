@@ -2,6 +2,7 @@ import os
 from os.path import join
 from pathlib import Path
 
+from decouple import config
 from django.contrib import staticfiles
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -11,10 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o@2)fbmz8_wcp_)usyi0x@%!s2_801ezf#+=wcc8ghsrxs$c9z'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Pour avoir accès sur le serveur local , on met l'ipV4 de la machine ici et on met le port 8000
 # on fait python manage.py runserver l'ipV4:8000
@@ -160,25 +161,9 @@ EMAIL_HOST_PASSWORD = 'ET18008gmailET18008!'"
 """
 
 # STRIPE
-STRIPE_SECRET_KEY = "sk_test_51LkES1Lzd8UZxNhh29YM4t224Zhqs9PmAiZgPYTf42btC3z9J10gWJcu5npvBr3x7FBEfdIEu0X9E9YFSRVk92TO00rTUBuZxk"
-STRIPE_PUBLISHABLE_KEY = "pk_test_51LkES1Lzd8UZxNhhCe8T95HO2JQI8EUgfT9tqkPxXTiImskC2ZcoE1BLET8rQzhyicVgF8u9HOxQkV4sm4z5dw9C00gOCkrPjG"
-WEBHOOK_ENDPOINT_SECRET = 'whsec_88daf7950fde3c019607ddd4630e3b384aa6790a4ac397170bfcabba1ece5668'
-
-FACEBOOK_APP_ID = '1222527255134214'
-FACEBOOK_APP_SECRET = "a54b2ad80651d5640101145f9f19b869"
-FACEBOOK_ACCESS_TOKEN = "EAARX4c7FQAYBAEhcK7Ck5NqjiyMJ8FLiCuGMHbAaZAdZALwWoJwZB07VXA5KMBXqO7VSlTfIFToLBfG1NOR1pS9filOW74wajm8hvkWClbjjOQ2CT1pgyzEFittpP4fy5FNhOL1Gv7xbkdaiqfoPTz0NeE32knIE2Qy9AsMMPlkJOg0zhIpL20iAE3MItE753HHZC8uZARA0q58PGlez5R7EXGjuO2XZCXU9aZCUe6CvzJmj99u07Htk1Y2FjtHgAQZD"
-
-# # TINYMCE
-#
-# TINYMCE_DEFAULT_CONFIG = {
-#     "theme": "silver",
-#     "height": 500,
-#     "menubar": False,
-#     "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,"
-#                "searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,"
-#                "code,help,wordcount",
-#     "toolbar": "undo redo | formatselect | "
-#                "bold italic backcolor | alignleft aligncenter "
-#                "alignright alignjustify | bullist numlist outdent indent | "
-#                "removeformat | help",
-# }
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+WEBHOOK_ENDPOINT_SECRET = config('WEBHOOK_ENDPOINT_SECRET')
+FACEBOOK_APP_ID = config('FACEBOOK_APP_ID')
+FACEBOOK_APP_SECRET = config('FACEBOOK_APP_SECRET')
+FACEBOOK_ACCESS_TOKEN = config('FACEBOOK_ACCESS_TOKEN')
