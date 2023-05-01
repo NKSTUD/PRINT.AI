@@ -1,6 +1,7 @@
 import os
 from os.path import join
 from pathlib import Path
+import dj_database_url
 
 from decouple import config
 from django.contrib import staticfiles
@@ -77,16 +78,21 @@ WSGI_APPLICATION = 'answer_ai.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'impleai',
+#         'USER': 'nouhan',
+#         'PASSWORD': 'ET18008',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
+DATABASE_URL = config('DATABASE_URL')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'impleai',
-        'USER': 'nouhan',
-        'PASSWORD': 'ET18008',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
 # Password validation
