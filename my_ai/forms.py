@@ -1,5 +1,4 @@
 from django import forms
-from tinymce.widgets import TinyMCE
 
 from my_ai.models import ProductDescriptionModel, Language, Tone
 
@@ -40,4 +39,4 @@ class ProductDescriptionForm(forms.ModelForm):
             ),
 
         }
-    #editor = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30,'id': 'editor'}))
+    # editor = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30,'id': 'editor'}))
