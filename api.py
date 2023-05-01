@@ -60,7 +60,6 @@ url = "https://graph.facebook.com/v16.0/ads_archive"
 # Envoi de la requête API
 response = requests.get(url, params=params)
 
-print(response.url)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 from accounts.forms import SignupForm, LoginForm
 
 
+@csrf_exempt
 def signup(request, *args, **kwargs):
     user = request.user
 
@@ -36,6 +38,7 @@ def signup(request, *args, **kwargs):
     return render(request, 'accounts/signup.html', context)
 
 
+@csrf_exempt
 def login_view(request):
     user = request.user
     if user.is_authenticated:

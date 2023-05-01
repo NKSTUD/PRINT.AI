@@ -17,7 +17,6 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
-print(DEBUG)
 
 # Pour avoir accès sur le serveur local , on met l'ipV4 de la machine ici et on met le port 8000
 # on fait python manage.py runserver l'ipV4:8000
@@ -80,21 +79,23 @@ WSGI_APPLICATION = 'answer_ai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 #
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'impleai',
-#         'USER': 'nouhan',
-#         'PASSWORD': 'ET18008',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'impleai',
+            'USER': 'nouhan',
+            'PASSWORD': 'ET18008',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
-DATABASE_URL = config('DATABASE_URL')
-DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}
+else:
+    DATABASE_URL = config('DATABASE_URL')
+    DATABASES = {
+        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -132,7 +133,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-print(STATICFILES_DIRS)
 
 # Media files (User uploaded files)
 MEDIA_URL = '/media/'
@@ -175,3 +175,7 @@ WEBHOOK_ENDPOINT_SECRET = config('WEBHOOK_ENDPOINT_SECRET')
 FACEBOOK_APP_ID = config('FACEBOOK_APP_ID')
 FACEBOOK_APP_SECRET = config('FACEBOOK_APP_SECRET')
 FACEBOOK_ACCESS_TOKEN = config('FACEBOOK_ACCESS_TOKEN')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://printai-production.up.railway.app'
+]
