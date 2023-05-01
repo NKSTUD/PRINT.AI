@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'accounts',
     "memberships",
     'my_ai',
-    'fontawesomefree',
     'widget_tweaks',
     "django_htmx",
     'tinymce',
