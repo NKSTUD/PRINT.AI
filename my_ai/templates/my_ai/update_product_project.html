@@ -6,78 +6,78 @@
     <title>{{ project.project_name }}</title>
 {% endblock %}
 
-<!-- VERTICAL MENU-->
-{% block menu %}
-    <div class="menu-container">
-        <a href="{% url 'templates_View' %}">
-            Templates
-        </a>
-        <hr>
-
-        <label for="nav-search"></label>
-        <input type="search" id="nav-search"
-               hx-get="{% url 'home' %}"
-               name="search"
-               hx-target="#results"
-               hx-swap="innerHTML"
-               hx-trigger="keyup changed delay:500ms"
-               class="form-control mb-3"
-               hx-select="#searched"
-               placeholder="search templates..."
-        >
-        <div id="results">
-
-        </div>
-        <div>
-            {% if not results %}
-                {% for templateCategory in all_template_categories %}
-                    <div class="template-category" onclick="toggleCategory(this)">
-                    <span class="category-toggle"
-                    ><i class="uil uil-angle-right"></i></span>{{ templateCategory.name }}
-                    </div>
-                    <div class="template-list hidden_list">
-                        {% for template in templateCategory.templates_set.all %}
-                            <a href="{% url 'update-project' project.id %}?q={{ template.name }}"
-
-                            >
-                                {{ template.name }} <span class="text-danger fw-bold"></span>
-                            </a>
-                        {% endfor %}
-                        <hr>
-                    </div>
-                {% empty %}
-                {% endfor %}
-            {% endif %}
-
-            {% if searched %}
-
-                <div id="searched" class="my-2">
-                    <hr>
-                    {% for template in results %}
-                        <a href="{% url 'update-project' project.id %}?q={{ template.name }}">
-                            {{ template.name }}
-                        </a>
-                        <br>
-                    {% empty %}
-                        <span class="text-danger">No Templates Found for {{ searched }}</span>
-                    {% endfor %}
-                    <hr>
-                </div>
-
-            {% endif %}
-        </div>
-        <span class="user-profile">
-</span>
-
-    </div>
-
-{% endblock %}
 
 <!-- FORM -->
 
 {% block content %}
-    <div class="d-flex row justify-content-between">
-        <div class="col-md-6 p-4">
+    <div class="main-container-grid-create">
+        {% block menu %}
+            <div class="menu-container">
+                <i class="uil uil-user-circle user-profile"></i>
+                <br>
+                <a href="{% url 'home' %}">Home</a>
+                <br>
+                <a href="{% url 'templates_View' %}">
+                    Templates
+                </a>
+                <hr>
+
+                <label for="nav-search"></label>
+                <input type="search" id="nav-search"
+                       hx-get="{% url 'home' %}"
+                       name="search"
+                       hx-target="#results"
+                       hx-swap="innerHTML"
+                       hx-trigger="keyup changed delay:500ms"
+                       class="form-control mb-3"
+                       hx-select="#searched"
+                       placeholder="search templates..."
+                >
+                <div id="results">
+
+                </div>
+                <div>
+                    {% if not results %}
+                        {% for templateCategory in all_template_categories %}
+                            <div class="template-category" onclick="toggleCategory(this)">
+                    <span class="category-toggle"
+                    ><i class="uil uil-angle-right"></i></span>{{ templateCategory.name }}
+                            </div>
+                            <div class="template-list hidden_list">
+                                {% for template in templateCategory.templates_set.all %}
+                                    <a href="{% url 'update-project' project.id %}?q={{ template.name }}"
+
+                                    >
+                                        {{ template.name }} <span class="text-danger fw-bold"></span>
+                                    </a>
+                                {% endfor %}
+                                <hr>
+                            </div>
+                        {% empty %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if searched %}
+
+                        <div id="searched" class="my-2">
+                            <hr>
+                            {% for template in results %}
+                                <a href="{% url 'update-project' project.id %}?q={{ template.name }}">
+                                    {{ template.name }}
+                                </a>
+                                <br>
+                            {% empty %}
+                                <span class="text-danger">No Templates Found for {{ searched }}</span>
+                            {% endfor %}
+                            <hr>
+                        </div>
+
+                    {% endif %}
+                </div>
+                <span class="user-profile"></span>
+            </div>
+        {% endblock %}
+        <div id="form__column">
             <div class="d-flex justify-content-between">
                 <h4>{{ user_template_name }}</h4>
                 <div id="tab-contents" hx-trigger="load">
@@ -87,7 +87,8 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="form_create-tab" data-bs-toggle="pill"
                                 data-bs-target="#form_create"
-                                type="button" role="tab" aria-controls="form_create" aria-selected="true">Create a copy
+                                type="button" role="tab" aria-controls="form_create" aria-selected="true">Create a
+                            copy
                         </button>
                     </li>
 
@@ -201,18 +202,16 @@
             </div>
         </div>
 
-        <div class="col-md-6" id="col_tiny">
-            <button  id="tiny_display" class="btn btn-primary" style="display: none">Hide editor</button>
+        <div id="tiny__column">
+            <button id="tiny_display" class="btn btn-primary" style="display: none">Hide editor</button>
             <div id="editor">
 
             </div>
-
         </div>
     </div>
 
+
     <script>
-
-
         tinymce.init({
             height: '100vh',
             selector: '#editor',
@@ -247,6 +246,5 @@
                 toggleEditorButton.textContent = 'Show editor';
             }
         });
-
     </script>
 {% endblock %}

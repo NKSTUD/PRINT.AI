@@ -1,14 +1,42 @@
 {% extends 'base.html' %}
 
-<div class="main-container">
-    {% block menu %}
-        {% include 'menu.html' %}
-    {% endblock %}
 
-    {% block content %}
+
+{% block content %}
+
+    <div class="main-container-grid">
+        {% block menu %}
+            {% include 'menu.html' %}
+        {% endblock %}
+        <div class="user-info hidden">
+            <ul>
+                <li class="nav-links"><i class="uil uil-airplay"></i><a href="{% url 'pricing' %}">Pricing</a></li>
+                <li class="nav-links"><i class="uil uil-user-circle"></i>
+                    <a href="{% url 'update-profile' %}">Profile</a></li>
+                {% if request.user.usermembership is not None %}
+                    <li class="nav-links">
+                        <i class="uil uil-bill"></i><a href="{% url 'customer_portal' %}">Billing Infos</a>
+                    </li>
+                {% endif %}
+                <li class="nav-links"><i class="uil uil-percentage"></i><a href="#" id="user_words_count"> Total Words
+                    : {{ request.user.number_of_words }}</a>
+                </li>
+                <li class="nav-links"><i class="uil uil-signout"></i><a href="{% url 'logout' %}">Logout</a></li>
+                <li class="menu-bars"><i class="uil uil-bars"></i></li>
+
+            </ul>
+        </div>
         <div id="projects__list" hx-get="{% url 'projects-list' %}" hx-trigger="load"></div>
-    {% endblock %}
-</div>
+    </div>
+
+    <script>
+        user_profile = document.querySelector('.user-profile')
+        user_info = document.querySelector('.user-info')
+        user_profile.addEventListener('click', () => {
+            user_info.classList.toggle('hidden')
+        })
+    </script>
+{% endblock %}
 
 {% block footer %}
     {% include 'footer.html' %}

@@ -6,12 +6,11 @@
         <li class="nav-links"><a href="{% url 'pricing' %}">Pricing</a></li>
         <li class="nav-links"><a href="{% url 'update-profile' %}">Profile</a></li>
         {% if request.user.usermembership is not None %}
-                <li class="nav-links">
-                    <a href="{% url 'customer_portal' %}">Billing Infos</a>
-                </li>
+            <li class="nav-links">
+                <a href="{% url 'customer_portal' %}">Billing Infos</a>
+            </li>
         {% endif %}
         <li class="nav-links"><a href="{% url 'logout' %}">Logout</a></li>
         <li class="menu-bars"><i class="uil uil-bars"></i></li>
-
     </ul>
 </nav>

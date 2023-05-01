@@ -1,4 +1,11 @@
 <div class="menu-container">
+    <a href="{% url 'home' %}">
+        Home
+    </a>
+    <br>
+    <i class="uil uil-user-circle user-profile"></i>
+
+    <hr>
     <a href="{% url 'templates_View' %}">
         Templates
     </a>
@@ -59,8 +66,6 @@
         {% endif %}
 
     </div>
-    <span class="user-profile">
-</span>
 
 </div>
 
@@ -73,4 +78,5 @@
             category.firstElementChild.firstElementChild.classList.toggle('uil-angle-right')
         })
     })
+
 </script>

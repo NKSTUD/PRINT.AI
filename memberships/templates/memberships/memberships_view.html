@@ -3,36 +3,46 @@
 {% block title %}
     <title>pricing</title>
 {% endblock %}
-{% block content-class %} single-column {% endblock %}
 
-{% block menu %}
 
+{% block nav %}
+    {% include 'nav.html' %}
 {% endblock %}
 
 
 {% block content %}
-    <div class="container-fluid" id="membership">
-        <h1 class="text text-center m-4">Our pricing</h1>
-        <div class="d-flex justify-content-center">
-            {% for membership in memberships %}
-                <form hx-post="{% url 'checkout' %}" class="membership mx-" method="POST" id="checkout_btn">
-                    {% csrf_token %}
-                    <input type="hidden" name="membership_id" value="{{ membership.stripe_plan_id }}">
-                    {{ membership.number_of_words }} Words
-                    <br>
-                    {{ membership.price }}$
-                    <br>
-                    {{ membership.membership_type }}
-                    <p>
-                        <button type="submit" class="btn btn-primary">
-                            checkout
-                            <span class="htmx-indicator spinner-border spinner-border-sm"
-                                  role="status"
-                                  aria-hidden="true"></span>
-                        </button>
-                    </p>
-                </form>
-            {% endfor %}
+    <div class="main-container">
+
+        <div id="membership">
+            <h1 class="text text-center m-4">Our pricing</h1>
+            <div class="d-flex justify-content-center index-container">
+                {% for membership in memberships %}
+                    <form hx-post="{% url 'checkout' %}" method="POST" id="checkout_btn">
+                        {% csrf_token %}
+                        <input type="hidden" name="membership_id" value="{{ membership.stripe_plan_id }}">
+                        <div class="package">
+                            <div class="name">{{ membership.membership_type }}</div>
+                            <div class="price">${{ membership.price }}</div>
+                            <div class="trial">Available for a month</div>
+                            <hr>
+                            <ul>
+                                <li>
+                                    <i class="fa fa-check"></i><strong>Unlimited</strong> Number of Words
+                                </li>
+                                <li><i class="fa fa-check"></i><strong>Customers</strong> Service</li>
+                                <li><i class="fa fa-check"></i><strong>95+</strong> templates</li>
+                                <li><i class="fa fa-check"></i><strong>25+</strong> languages supported</li>
+                            </ul>
+                            <button type="submit" class="btn btn-success">
+                                checkout
+                                <span class="htmx-indicator spinner-border spinner-border-sm"
+                                      role="status"
+                                      aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -8,35 +8,26 @@
 
 <header>
     {% block nav %}
-        {% include 'nav.html' %}
     {% endblock %}
 </header>
 
 <main>
-    <div id="main__section">
-        <div class="main-container {% block content-class %}{% endblock %}" id="main__container">
-
-            {% block menu %}
-                {% include 'menu.html' %}
-            {% endblock %}
-            <div class="index-container">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-    </div>
-
+    {% block content %}
+        {% block menu %}
+            {% include 'menu.html' %}
+        {% endblock %}
+    {% endblock %}
 </main>
 
 {% block footer %}
     {% include 'footer.html' %}
 {% endblock %}
 
-
 <script>
     document.body.addEventListener('htmx:configRequest', (event) => {
         event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
     });
+
 </script>
 
 </body>

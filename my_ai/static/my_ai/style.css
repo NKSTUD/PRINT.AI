@@ -1,17 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/circular-std');
-@import url('https://fonts.cdnfonts.com/css/gotham');
-@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
-@import url('https://fonts.cdnfonts.com/css/aktiv-grotesk-cd-trial');
 @import url('https://fonts.cdnfonts.com/css/brandon-grotesque');
-
-/*
-font-family: 'Aktiv Grotesk Cd Trial', sans-serif;
-font-family: 'Aktiv Grotesk Ex Trial', sans-serif;
-font-family: 'Aktiv Grotesk VF Trial', sans-serif;
-font-family: 'Aktiv Grotesk Trial', sans-serif;
-
-*/
-
 
 /* ===== =======VARIABLES ============= */
 
@@ -25,6 +12,7 @@ font-family: 'Aktiv Grotesk Trial', sans-serif;
     --color-danger: hsl(0, 95%, 65%);
     --color-black: hsl(252, 30%, 10%);
     --color-white: white;
+    --accent-color: #33c4b6;
 
     /*COULEUR A TESTER*/
     --color-turquoise: #08D9D6;
@@ -63,29 +51,27 @@ body {
     background: var(--color-white);
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-
+    margin: 0;
 }
 
 
 /* ===== =======NAVBAR ============= */
 nav {
     width: 100%;
-    background: var(--color-light);
     padding: 1rem 0;
     position: fixed;
-    top: 0;
     z-index: 10;
-    height: 5rem;
+    height: 3rem;
     font-size: 1rem;
     transition: all 0.3s ease;
+    background: var(--color-turquoise);
 }
 
 nav ul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
+    justify-content: space-around;
+    height: 100%;
 }
 
 nav ul li {
@@ -93,7 +79,6 @@ nav ul li {
     margin: 0 1rem;
     text-transform: capitalize;
     letter-spacing: 1px;
-    font-weight: 510;
     transition: all 0.3s ease;
 }
 
@@ -103,15 +88,13 @@ nav ul li:hover {
 
 .nav-logo {
     font-size: 1.5rem;
-    font-weight: bold;
     color: var(--color-turquoise);
     opacity: 1;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .nav-logo span {
     color: #e63946;
-    font-weight: 700;
 }
 
 .nav-links a {
@@ -123,33 +106,52 @@ nav ul li:hover {
 }
 
 
-main {
-    position: relative;
-    top: 5.4rem;
-}
-
 .main-container {
     display: grid;
-    grid-template-columns:  20% auto;
-    column-gap: 2rem;
+    position: relative;
+    top: 5rem;
+
+}
+
+.main-container-grid {
+    display: grid;
+    grid-template-columns: 20% auto;
     position: relative;
 }
+
+
+.main-container-grid-create {
+    display: grid;
+    grid-template-columns: 20% 35% auto;
+    column-gap: 2rem;
+}
+
+#form__column {
+    Position: relative;
+    top: 2rem;
+}
+
+#tiny__column {
+    Position: sticky;
+    top: 2rem;
+    height: 100vh;
+}
+
 
 .menu-container {
     height: 100vh;
     position: sticky;
-    top: 5.4rem;
+    top: 0;
     padding: 2rem;
     background: var(--color-turquoise);
     transition: all 0.3s ease;
     overflow-y: scroll;
     overflow-x: hidden;
 
+
 }
 
-.single-column {
-    display: block;
-}
+
 
 
 .menu-container a {
@@ -169,38 +171,9 @@ main {
     font-size: 1rem;
 }
 
-/*RESPONSIVE*/
-/* For screens smaller than 768px */
-/*@media (max-width: 767px) {
-    .menu-container {
-        height: auto;
-        position: static;
-        top: initial;
-        padding: 0;
-        display: none;
-    }
-
-
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        margin: 0 0.5rem;
-    }
-
-    .menu-container a {
-        display: block;
-        padding: 1rem 0;
-    }
-
-    .menu-container > a:first-child {
-        font-size: 1.2rem;
-    }
-}*/
-
-
 .index-container {
-    margin-bottom: 2rem;
+    position: relative;
+    top: 2rem;
 }
 
 
@@ -219,9 +192,9 @@ a {
 }
 
 [class='card h-100']:hover {
-    -webkit-box-shadow: 5px 5px 15px -5px #000000;
-    box-shadow: 5px 5px 15px -5px #000000;
-    transform: translateY(-5px);
+    box-shadow: 6px 9px 12px -11px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 6px 9px 12px -11px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 6px 9px 12px -11px rgba(0, 0, 0, 0.7);
 }
 
 [class='card h-100'] {
@@ -257,7 +230,6 @@ input {
 }
 
 
-
 .template-list:not(.hidden_list) {
     display: flex;
     flex-direction: column;
@@ -280,14 +252,13 @@ pre {
 }
 
 .user-profile {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    background: #E8F0FE;
+    font-size: 3rem;
     display: inline-block;
     cursor: pointer;
     margin: 0.5rem auto;
+
 }
+
 
 .template-icon {
     color: var(--color-turquoise);
@@ -379,22 +350,181 @@ pre {
     margin-right: 1rem;
 }
 
+/*MEMBERSHIP PAGE*/
+.wrapper {
+    position: static;
+    top: 50%;
+    left: 50%;
+    margin: -190px 0 0 -468px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #9f9f9f;
+    font-size: 15px;
+}
 
-@media screen and (max-width: 768px) {
-    .menu-container {
-        height: auto;
-        position: static;
-        top: initial;
-        padding: 0;
-        display: none;
+.package {
+    box-sizing: border-box;
+    width: 301px;
+    height: 380px;
+    border: 3px solid #e8e8e8;
+    border-radius: 7px;
+    display: inline-block;
+    padding: 24px;
+    text-align: center;
+    float: left;
+    transition: margin-top .5s linear;
+    position: relative;
+    margin-right: 11px;
+}
+
+.package:hover {
+    margin-top: -30px;
+    transition: margin-top .3s linear;
+}
+
+.name {
+    color: #565656;
+    font-weight: 300;
+    font-size: 3rem;
+    margin-top: -5px;
+}
+
+.price {
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+.price::after {
+    content: " / month per user";
+    font-weight: normal;
+}
+
+.package > hr {
+    background-color: #dedede;
+    border: none;
+    height: 1px;
+}
+
+.package > .trial {
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 2px 21px 2px 21px;
+    color: var(--color-turquoise);
+    border: 1px solid #e4e4e4;
+    display: inline-block;
+    border-radius: 15px;
+    background-color: white;
+    position: relative;
+    bottom: -20px;
+}
+
+.package > ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 29px;
+}
+
+.package li {
+    margin-bottom: 15px;
+}
+
+.package li > i {
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--color-turquoise);
+}
+
+.package li:before {
+    font-size: 1.3rem;
+    color: var(--color-turquoise);
+    margin-right: 3px;
+}
+
+.package .brilliant {
+    border-color: var(--color-turquoise);
+    position: relative;
+}
+
+.package .brilliant::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 64px 64px 0 0;
+    border-color: var(--color-turquoise) transparent transparent transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.package .brilliant::after {
+    font-size: 1.4rem;
+    color: white;
+    position: absolute;
+    left: 9px;
+    top: 6px;
+    text-shadow: 0 0 2px var(--color-turquoise);
+}
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .main-container-grid {
+        grid-template-columns: 100%;
+        margin-right: 0;
+        padding-right: 0;
+
+
     }
 
-    .main-container {
-        display: block;
+    .menu-container {
+        display: none;
     }
 
     nav {
         display: none;
     }
+
+
 }
 
+.user-info {
+    height: 300px;
+    width: 300px;
+    border: 1px solid var(--color-turquoise);
+    border-radius: 5%;
+    position: fixed;
+    z-index: 100;
+    left: 6%;
+    top: 16%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    transition: all 0.6s ease;
+}
+
+.user-info:not(.hidden) {
+    display: block;
+    opacity: 1;
+}
+
+/* ===== Scrollbar CSS ===== */
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b7b7b7;
+    border-radius: 15px;
+    border: 2px none #ffffff;
+}

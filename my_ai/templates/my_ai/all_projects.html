@@ -4,17 +4,15 @@
 
 
 
-<div class=" row d-flex justify-content-start " id="template ">
+<div class=" row d-flex mt-4" id="template ">
     {% if  projects.number == 1 %}
-        <h4>Popular templates</h4>
-        <div class="row d-flex justify-content-start g-3">
+        <h4 class="text text-center">Popular templates</h4>
+        <div class="row d-flex ">
             {% for template in most_common_templates %}
-                <a class="col-md-3" href="{% url 'create_product_copy' %}?q={{ template.name }}">
-
+                <a class="col-md-3 g-3" href="{% url 'create_product_copy' %}?q={{ template.name }}">
                     <div class="card h-100">
                         <div class="card-header bg-white template-name">{{ template.name | truncatechars:20 }}
                             <i class="template-icon {{ template.icon_class }}"></i>
-
                         </div>
                         <div class="card-body">
                             <div class="card-text template-decription">
@@ -30,9 +28,7 @@
             <h4 class="text mt-3 ">You have {{ all_projects.count }} projects</h4>
             <button class="btn btn-danger mb-3" type="submit"
                     hx-get="{% url 'delete_blank_projects' %}"
-
             >
-
                 Delete all blank
                 projects {{ user_blank_projects.count }}
                 <span class=" htmx-indicator spinner-border spinner-border-sm" role="status"
@@ -111,4 +107,3 @@
         </div>
     </div>
 {% endif %}
-
