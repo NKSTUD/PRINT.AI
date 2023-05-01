@@ -20,7 +20,7 @@ print(DEBUG)
 
 # Pour avoir accès sur le serveur local , on met l'ipV4 de la machine ici et on met le port 8000
 # on fait python manage.py runserver l'ipV4:8000
-ALLOWED_HOSTS = ['172.20.210.128', "localhost", "127.0.0.1", "192.168.1.101"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
