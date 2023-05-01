@@ -16,6 +16,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
+print(DEBUG)
 
 # Pour avoir accès sur le serveur local , on met l'ipV4 de la machine ici et on met le port 8000
 # on fait python manage.py runserver l'ipV4:8000
@@ -120,15 +121,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "my_ai/static"),
-]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/staticfiles/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+print(STATICFILES_DIRS)
+
+# Media files (User uploaded files)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/mediafiles/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
