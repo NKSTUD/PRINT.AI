@@ -2,7 +2,7 @@
 
 /* ===== =======VARIABLES ============= */
 
-:root {
+:root{
     --color-dark: hsl(252, 30%, 17%);
     --color-light: hsl(252, 30%, 95%);
     --color-gray: hsl(252, 15%, 65%);
@@ -117,6 +117,7 @@ nav ul li:hover {
     display: grid;
     grid-template-columns: 20% auto;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 

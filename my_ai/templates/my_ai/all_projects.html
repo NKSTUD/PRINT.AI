@@ -2,8 +2,6 @@
     <title>Home</title>
 {% endblock %}
 
-
-
 <div class=" row d-flex mt-4" id="template ">
     {% if  projects.number == 1 %}
         <h4 class="text text-center">Popular templates</h4>
@@ -75,12 +73,12 @@
                             -
                             {{ forloop.counter }}{% endif %}
                         <button type="submit"
-                                class="btn btn-danger btn-close text-white"
+                                class="btn"
                                 hx-delete="{% url 'delete-project' project.id %}"
                                 hx-confirm="Are you sure to delete this project?"
                                 hx-target="#main__section"
-
-                        ></button>
+                        >...
+                        </button>
                     </div>
                     <div class="card-body">
                         <div class="card-text">

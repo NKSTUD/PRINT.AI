@@ -41,11 +41,16 @@
                     <div class="mb-2 input-group">
                         <span class="input-group-text " style="width: 8rem">
                             <span class="me-1"><i class="fa-solid fa-lock-open"></i></span>
-                           Confirmer
+                            Confirm
                         </span>
                         {{ form.password2 | attr:"class:form-control" | attr:"placeholder: Confirm your Password" }}
                     </div>
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    <button type="submit" class="btn btn-primary">
+                        Signup
+                        <span class="htmx-indicator spinner-border spinner-border-sm"
+                              role="status"
+                              aria-hidden="true"></span>
+                    </button>
                 </form>
                 {% for message in messages %}
                     <p class="alert alert-danger text-center mt-3" id="signuperrors">{{ message }}</p>
@@ -58,7 +63,6 @@
 
         </div>
     </div>
-
 
 {% endblock %}
 

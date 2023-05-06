@@ -176,6 +176,7 @@ FACEBOOK_APP_ID = config('FACEBOOK_APP_ID')
 FACEBOOK_APP_SECRET = config('FACEBOOK_APP_SECRET')
 FACEBOOK_ACCESS_TOKEN = config('FACEBOOK_ACCESS_TOKEN')
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://printai-production.up.railway.app'
-]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+        'https://printai.up.railway.app'
+    ]
