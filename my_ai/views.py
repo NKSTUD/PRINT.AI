@@ -118,6 +118,7 @@ def get_context_from_form(request, form):
 
 
 def get_ai_answers(request, user_template, context: dict, form):
+
     number_of_variants = int(request.POST.get("number_of_variant", '1'))
     user_prompt = get_user_prompt(user_template, context, form)
     return answer_and_save_word_count(

@@ -1,0 +1,191 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "accounts",
+      "model": "customuser"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "memberships",
+      "model": "membership"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "memberships",
+      "model": "membershipchoices"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "memberships",
+      "model": "usermembership"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "memberships",
+      "model": "subscription"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "my_ai",
+      "model": "language"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "my_ai",
+      "model": "templatecategory"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "my_ai",
+      "model": "tone"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "my_ai",
+      "model": "templates"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+      "app_label": "my_ai",
+      "model": "productdescriptionmodel"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+      "app_label": "my_ai",
+      "model": "aidescription"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "dm0zh7shmbsk5w8qmck95qgj4jkbx8bz",
+    "fields": {
+      "session_data": ".eJxVjLsSwiAQRf-F2mEW8rYy9pbWmQWWBCXBCYkWjv8umUmTLba45577ZTSi8-zM3PjyhC7S_HaaLv0Wcx1GdmIdrsvQrQl1zqSqOGYK9ZOmDZgHTn1I1rTMTvGtwncaeet9-KR3T068BUP-uouHtQHjkKbymsAaZUFAoxolcgAJZFFbxLqsCsoQmkKDrC2lk1UuSqUBgKRQGQD7_QFJKkms:1ptRlS:obOGLtfTqpN5nNpUQfFNEVBtIzrfc_WfUZnTSA7V1G0",
+      "expire_date": "2023-05-15T11:32:18.080Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "zx8ei4j248egdqfppfbt8acvxn08b1ks",
+    "fields": {
+      "session_data": ".eJxVjLsSwiAQRf-F2mEW8rYy9pbWmQWWBCXBCYkWjv8umUmTLba45577ZTSi8-zM3PjyhC7S_HaaLv0Wcx1GdmIdrsvQrQl1zqSqOGYK9ZOmDZgHTn1I1rTMTvGtwncaeet9-KR3T068BUP-uouHtQHjkKbymsAaZUFAoxolcgAJZFFbxLqsCsoQmkKDrC2lk1UuSqUBgKRQGQD7_QFJKkms:1ptYfj:a3Movne9XLxTGfYsgBfFDxCN498vbOYv-VIN2Wj8zz0",
+      "expire_date": "2023-05-15T18:54:51.686Z"
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$v8vPmavwsKDfXQSvyeTkbN$q/fcf5vvhXu/7AFKTALXPvKIRA9LE/nw9GYx14MBxTw=",
+      "email": "impleaiservice@gmail.com",
+      "first_name": "",
+      "last_name": "",
+      "date_joined": "2023-05-01T10:47:49.152Z",
+      "last_login": "2023-05-01T18:54:51.682Z",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "is_email_verify": true,
+      "number_of_words": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 2,
+    "fields": {
+      "password": "ET18008ET18008!",
+      "email": "test@gmail.com",
+      "first_name": "Nouh",
+      "last_name": "krum",
+      "date_joined": "2023-05-01T10:47:49.152Z",
+      "last_login": "2023-05-01T10:47:49.152Z",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "is_email_verify": true,
+      "number_of_words": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "memberships.membershipchoices",
+    "pk": 1,
+    "fields": {
+      "name": "Free"
+    }
+  }
+]

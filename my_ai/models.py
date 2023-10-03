@@ -75,7 +75,10 @@ class Language(models.Model):
 
     @classmethod
     def get_default_language(cls):
-        default_language, _ = cls.objects.get_or_create(output_language="English (American English) en")
+        default_language, _ = cls.objects.get_or_create(
+            output_language="English (American) en",
+            defaults={'output_language': "English (American) en"}
+        )
         return default_language
 
 

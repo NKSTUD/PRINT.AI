@@ -1,1 +1,1 @@
-web: gunicorn 'answer_ai.wsgi'
+web: gunicorn  answer_ai.wsgi --log-file -

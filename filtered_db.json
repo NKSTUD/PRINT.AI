@@ -1,0 +1,1966 @@
+[
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 1,
+    "fields": {
+      "name": "Digital marketing"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 3,
+    "fields": {
+      "name": "Marketing Formulas"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 8,
+    "fields": {
+      "name": "Email Marketing Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 9,
+    "fields": {
+      "name": "Social Ads Copy"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 10,
+    "fields": {
+      "name": "Website Copy"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 11,
+    "fields": {
+      "name": "Blog Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 12,
+    "fields": {
+      "name": "Social Media Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 13,
+    "fields": {
+      "name": "Writing Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 14,
+    "fields": {
+      "name": "Brainstorming Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 15,
+    "fields": {
+      "name": "Personal Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 16,
+    "fields": {
+      "name": "Brand Tools"
+    }
+  },
+  {
+    "model": "my_ai.templatecategory",
+    "pk": 17,
+    "fields": {
+      "name": "Product Descriptions"
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 2,
+    "fields": {
+      "name": "Google Descriptions",
+      "category": 9,
+      "description": "Optimize your website with informative and engaging meta descriptions",
+      "prompt": "The following are the suggestions for Google Ads campaigns of my products:\r\n\r\nProduct Name : PC Bluetooth adapter\r\nProduct Description: The PC Bluetooth adapter applies the latest Bluetooth 5.1 chipset greatly reduces the power consumption of Bluetooth(BLE).\r\nTone : Professional\r\nOutput: us English\r\nGoogle Ads suggestion :The World's Most Advanced Bluetooth(BLE) 5.1 Chipset\r\n\r\nGenerate a Google Ads suggestion for this product:\r\nProduct Name : {product_name}\r\nProduct Description: {user_product_description}\r\nTone:{tone}\r\nOutput Language : {output_language}\r\nGoogle Ads suggestion :",
+      "max_token": 120,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 3,
+    "fields": {
+      "name": "General Ad Copy",
+      "category": 9,
+      "description": "Craft effective ad copy for any industry or niche",
+      "prompt": "Generate me a general Ad Copy for my product or brand named {product_name}.\r\n-With theses features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 125,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 4,
+    "fields": {
+      "name": "Facebook Listicle",
+      "category": 9,
+      "description": "Create compelling list-style posts for Facebook",
+      "prompt": "The following are Facebook Listicle for some products:\r\n\r\nProduct Name: Bluetooth Adapter\r\nOutput Language: us English\r\nProduct Description: The PC Bluetooth adapter applies the latest Bluetooth 5.1 chipset greatly reduces the power consumption of Bluetooth(BLE). \r\nFacebook Listicle:\r\nConnect Your PC To The Smartest Technology Available\r\n✅ Easily Pair With Any Bluetooth Device 📱\r\n✅ Stream Music 👂\r\n✅ Connect To Wi-Fi With Ease 🌆\r\n✅ Extend Battery Life 👌\r\n\r\n\r\n\r\nGenerate a Facebook Listicle for my product named: {product_name}\r\nAdd some emoticons, please!\r\nIn {output_language} Language.\r\nIn a {tone} tone.\r\nProduct  description :{user_product_description}\r\nFacebook Listicle:",
+      "max_token": 150,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 5,
+    "fields": {
+      "name": "Google Headlines",
+      "category": 1,
+      "description": "Create attention-grabbing headlines that improve your SEO",
+      "prompt": "Generate me a  Google Headlines for my product or brand named {product_name}.\r\n-With theses features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 70,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 6,
+    "fields": {
+      "name": "LinkedIn Ad Copy",
+      "category": 9,
+      "description": "Create ad copy that stands out on LinkedIn",
+      "prompt": "Generate me a  LinkedIn Ad Copy for my product or brand named {product_name}.\r\n-With theses features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 200,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 7,
+    "fields": {
+      "name": "Facebook Primary Text",
+      "category": 9,
+      "description": "Craft engaging Facebook post copy",
+      "prompt": "Generate me a  description for my product or brand named {product_name}.\r\n-With theses features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 50,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 8,
+    "fields": {
+      "name": "Ad Copy Variants",
+      "category": 9,
+      "description": "Generate multiple ad copies to increase conversion",
+      "prompt": "Generate me an Ad Copy for my product or brand named {product_name}.\r\nYou can add some offer and discounts.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 125,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 9,
+    "fields": {
+      "name": "Facebook Link Descriptions",
+      "category": 9,
+      "description": "Make your Facebook posts more engaging with descriptive links",
+      "prompt": "Generate me a Facebook Link Description in just one creative adverbial sentence for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 70,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 10,
+    "fields": {
+      "name": "Blog posts ideas",
+      "category": 11,
+      "description": "Never run out of blog post ideas again",
+      "prompt": "Generate me in {output_language} with {tone} Tone 5 Blog Post ideas suggestions for {product_name} With these features : {user_product_description}",
+      "max_token": 200,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Explain what your blog is about ?",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 11,
+    "fields": {
+      "name": "Cancellation Email",
+      "category": 8,
+      "description": "Handle cancellations with empathy and grace",
+      "prompt": "Generate me a Cancellation Email for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 12,
+    "fields": {
+      "name": "Welcome Email",
+      "category": 8,
+      "description": "Craft a warm and welcoming email that introduces your brand to new subscribers and sets the tone for a long and fruitful relationship.",
+      "prompt": "Generate me a  Welcome Email for my product or brand named {product_name}.\r\n-With theses features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Email Subject Here",
+      "product_name_placeholder": "Welcome to AI Copywriting",
+      "user_description_label": "Model and some topics you wan to cover",
+      "user_description_placeholder": "Dear [Name],\r\n\r\nWelcome to AI Copywriting! We’re thrilled to have you as a member of our community. \r\n.\r\n.\r\n.\r\nSincerely,\r\n\r\nThe AI Copywriting Team",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 13,
+    "fields": {
+      "name": "Brand Mission",
+      "category": 16,
+      "description": "Define and communicate your brand mission effectively",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With theses features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 125,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Product or Brand Name",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 14,
+    "fields": {
+      "name": "Brand Voice",
+      "category": 16,
+      "description": "Develop a consistent and compelling brand voice",
+      "prompt": "Brand voice is a slogan that brands use to show their goals in a simple, creative sentence.\r\nGenerate me a Brand Voice for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 70,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 16,
+    "fields": {
+      "name": "Marketing Angles",
+      "category": 9,
+      "description": "Find unique angles to market your product or service",
+      "prompt": "Generate in short creative sentence a marketing angle for {product_name} that showcases {user_product_description} in {output_language} with a {tone} tone.",
+      "max_token": 70,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 17,
+    "fields": {
+      "name": "Attention-Interest-Desire-Action",
+      "category": 3,
+      "description": "Follow a proven formula to create effective copy",
+      "prompt": "Generate in {output_language} Language a {tone} {user_template_name} marketing formula for my product in this order :\r\n\r\n-Attention :\r\n\r\n-Interest :\r\n\r\n-Desire:\r\n\r\n-Action:\r\n\r\nProduct name: {product_name}.\r\n\r\nProduct Description: {user_product_description}\r\n\r\n{output_language} language {user_template_name}:",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 22,
+    "fields": {
+      "name": "Problem-Promise-Proof-Proposal",
+      "category": 3,
+      "description": "Identify the problem, make a promise, provide proof, and present a proposal with this formula",
+      "prompt": "Generate in {output_language} Language a {tone} {user_template_name} marketing formula for my product in this order :\r\n\r\n-Problem :\r\n\r\n-Promise :\r\n\r\n-Proof :\r\n\r\n-Proposal :\r\n\r\nProduct name: {product_name}.\r\n\r\nProduct Description: {user_product_description}\r\n\r\n{output_language} language {user_template_name}:",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 23,
+    "fields": {
+      "name": "Pain-Agitate-Solution",
+      "category": 3,
+      "description": "Highlight the pain points, agitate the problem, and offer a solution to your audience",
+      "prompt": "In the marketing formula Pain-agitate-solution... \r\nPAIN: We start by expressing the difficulty or pain that customers have without our product.\r\n\r\nAGITATE: We act on emotion, use creative emotion to show how much you identify with the feelings your potential customer is experiencing.\r\n\r\nSOLUTION: Prove to them that our product can solve all their problems.\r\n\r\nGenerate in {output_language} Language a {tone} {user_template_name} marketing formula for my product in this order :\r\n\r\n-PAIN :\r\n\r\n-AGITATE:\r\n\r\n-SOLUTION:\r\n\r\nProduct name: {product_name}.\r\n\r\nProduct Description: {user_product_description}\r\n\r\n{output_language} language {user_template_name}:",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 24,
+    "fields": {
+      "name": "Feature-Advantage-Benefit",
+      "category": 3,
+      "description": "Highlight the features, advantages, and benefits of your product or service",
+      "prompt": "Generate in {output_language} Language a {tone} {user_template_name} marketing formula for my product in this order :\r\n\r\n-FEATURES :\r\n-ADVANTAGES :\r\n-BENEFITS:\r\n\r\nProduct name: {product_name}.\r\n\r\nProduct Description: {user_product_description}\r\n\r\n{output_language} language {user_template_name}:",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 25,
+    "fields": {
+      "name": "Before-After-Bridge",
+      "category": 3,
+      "description": "Create a compelling story with a transformational arc",
+      "prompt": "Generate in {output_language} Language a {tone} {user_template_name} marketing formula for my product in this order :\r\n\r\n-Before :\r\n\r\n-After :\r\n\r\n-Bridge :\r\n\r\nProduct name: {product_name}.\r\n\r\nProduct Description: {user_product_description}\r\n\r\n{output_language} language {user_template_name}:",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 26,
+    "fields": {
+      "name": "Youtube Script",
+      "category": 12,
+      "description": "Craft a compelling and informative script that captures viewers’ attention and keeps them engaged from start to finish.",
+      "prompt": "Generate a YouTube script for me about this subject: {product_name}\r\nWith these thematics : {user_product_description}\r\nIn this Language : {output_language}",
+      "max_token": 500,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 27,
+    "fields": {
+      "name": "Sales Prospecting Emails",
+      "category": 8,
+      "description": "Craft compelling sales prospecting emails that get results",
+      "prompt": "The following are sales propecting emails:\r\n\r\nCongrats! have you thought about [business value]?\r\n\r\nHey [first name],\r\n\r\nBecause I work so much with [your targeted industry], I noticed that [company] recently [company action]. Congrats!\r\n\r\nUsually when that happens, [business value] becomes a priority. That’s why I thought you might be interested in finding out how we helped [similar company] get going quickly in their new direction – without any of the typical glitches.\r\n\r\nIf you’d like to learn more, let’s set up a quick call. How does [specific day and time] look on your calendar?\r\n\r\nRegards,\r\n\r\n[Your name]\r\n\r\n\r\n\r\n\r\nWrite an interresting and short sales prospecting email for my product or brand named: {product_name}.\r\nWith this tone: {tone}\r\nIn this language: {output_language}\r\nWith these features:{user_product_description}.\r\n\r\nSales Propecting email:",
+      "max_token": 300,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 28,
+    "fields": {
+      "name": "Search Engine Optimization (SEO)",
+      "category": 10,
+      "description": "Optimize your website for search engines with effective copywriting",
+      "prompt": "Generate some best SEO keywords for my product named:{product_name}.\r\nWith these features:{user_product_description}\r\nIn this Language:{output_language}.\r\nWith this tone:{tone}.",
+      "max_token": 200,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier for you",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 30,
+    "fields": {
+      "name": "Product Descriptions",
+      "category": 17,
+      "description": "Write compelling descriptions that showcase the benefits of your product",
+      "prompt": "Generate me a creative description for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 32,
+    "fields": {
+      "name": "Confirmation Emails",
+      "category": 8,
+      "description": "Confirm orders and bookings with friendly and informative emails",
+      "prompt": "Generate a {user_template_name} for {product_name} that showcases {user_product_description} in {output_language} with a {tone} tone.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 33,
+    "fields": {
+      "name": "Catchy Email Subject Lines",
+      "category": 8,
+      "description": "Increase email open rates with catchy subject lines",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 34,
+    "fields": {
+      "name": "Follow Up Email",
+      "category": 8,
+      "description": "Follow up with potential clients or customers in a friendly and professional manner",
+      "prompt": "A hook in English is a catchy phrase or sentence that is used to grab the reader's attention and make them want to read more. The hook is typically the first thing the reader sees and is used to entice them to read the rest of the content. In marketing and advertising, the hook is often used to sell a product or service by highlighting its key benefits and unique features. The hook should be attention-grabbing, memorable, and relevant to the reader's interests. A good hook can make all the difference in getting someone to engage with your content and take action.\r\n\r\nGenerate me a {user_template_name} that showcases {user_product_description} in {output_language} with a {tone} tone.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What is the email for?",
+      "user_description_placeholder": "e.g. Reminding of a business opportunity.\r\n\r\nRecipient name : John",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 35,
+    "fields": {
+      "name": "Thank You Note",
+      "category": 8,
+      "description": "Express your gratitude with a heartfelt thank you note that shows your appreciation for someone’s kind gesture or action.",
+      "prompt": "Generate me a  {user_template_name} for  {product_name} about {user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Who is the message for?",
+      "product_name_placeholder": "Jack, customers",
+      "user_description_label": "What would you like to thank them for?",
+      "user_description_placeholder": "e.g. Their participation in yesterday's conference",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 36,
+    "fields": {
+      "name": "Call To Action",
+      "category": 10,
+      "description": "Inspire action and engagement with compelling CTAs",
+      "prompt": "Generate a {tone}  and urgent one sentence call to action for a {product_name} with these features :{user_product_description}, using {output_language} and a sense of urgency to encourage the reader to take immediate action.",
+      "max_token": 50,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 37,
+    "fields": {
+      "name": "Event Copy",
+      "category": 10,
+      "description": "Promote your event with effective copywriting",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 38,
+    "fields": {
+      "name": "Landing Page Hero Text",
+      "category": 10,
+      "description": "Use persuasive language in your landing page hero text to encourage conversions",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 39,
+    "fields": {
+      "name": "Listicle",
+      "category": 10,
+      "description": "Create list-style content that engages and informs your audience",
+      "prompt": "Generate me a  {user_template_name}  in this topic : {product_name}.\r\n-a list of  :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "What is your topic ?",
+      "product_name_placeholder": "Creating a startup",
+      "user_description_label": "what do you want to make a list ?",
+      "user_description_placeholder": "10 reasons to create a startup.",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 40,
+    "fields": {
+      "name": "Meta Descriptions",
+      "category": 10,
+      "description": "Write informative and attention-grabbing meta descriptions for your website",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 41,
+    "fields": {
+      "name": "Microcopy",
+      "category": 10,
+      "description": "Use concise and effective microcopy to improve your user experience",
+      "prompt": "Generate me a  {user_template_name} for {user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 100,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What is your microcopy for?",
+      "user_description_placeholder": "A thank for subscribing !",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 42,
+    "fields": {
+      "name": "Question Generator",
+      "category": 10,
+      "description": "Generate thought-provoking questions to engage and inspire your audience",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 43,
+    "fields": {
+      "name": "Social Proof Text",
+      "category": 10,
+      "description": "Use social proof to build trust and credibility with your audience",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 44,
+    "fields": {
+      "name": "Subheader",
+      "category": 10,
+      "description": "Use subheaders to break up your content and make it more readable",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 45,
+    "fields": {
+      "name": "Testimonial Rewriter",
+      "category": 10,
+      "description": "Rewrite customer testimonials to make them more impactful and persuasive",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 46,
+    "fields": {
+      "name": "Blog Conclusion",
+      "category": 11,
+      "description": "End your blog post with impact and purpose",
+      "prompt": "Generate me a creative and passionate Blog Conclusion with this topic {product_name}.\r\nUse some personal pronouns like : I, You ...\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "What's your topic ?",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Some details about your topic",
+      "user_description_placeholder": "Explain what your blog is about ?",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 47,
+    "fields": {
+      "name": "Blog Ideas",
+      "category": 11,
+      "description": "Generate fresh and engaging ideas for your blog",
+      "prompt": "Generate me a  {user_template_name} about {user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 48,
+    "fields": {
+      "name": "Blog Intro",
+      "category": 11,
+      "description": "Hook your readers with a captivating blog introduction",
+      "prompt": "Generate me a  {user_template_name}  about {user_product_description}.\r\n- the generated {user_template_name} must be in {output_language} with {tone} tone.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What your blog is about ?",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 49,
+    "fields": {
+      "name": "Blog Outline",
+      "category": 11,
+      "description": "Organize your blog content for maximum impact",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Explain what your blog is about ?",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 50,
+    "fields": {
+      "name": "Blog Title",
+      "category": 11,
+      "description": "Create attention-grabbing titles for your blog posts",
+      "prompt": "Generate me a {user_template_name} that showcases {user_product_description}.\r\n- In {output_language}\r\n- with a {tone} tone.",
+      "max_token": 255,
+      "temperature": 1.0,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What your blog post is about",
+      "user_description_placeholder": "e.g. Building a Strong Company Culture in the Workplace",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 51,
+    "fields": {
+      "name": "Blog Title - Listicle",
+      "category": 11,
+      "description": "Craft compelling titles for your list-style blog posts",
+      "prompt": "Generate me a  {user_template_name} about this topic {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "What is your main topic ?",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide more details",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 52,
+    "fields": {
+      "name": "Bullet Point to Blog Section",
+      "category": 13,
+      "description": "Transform your bullet points into engaging content",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 53,
+    "fields": {
+      "name": "Freestyle",
+      "category": 13,
+      "description": "Let your creativity run wild with freestyle writing",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 54,
+    "fields": {
+      "name": "Keyword Generator",
+      "category": 12,
+      "description": "Generate a list of relevant keywords to improve your SEO",
+      "prompt": "Generate a list of Keywords about {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "What topic are you posting about?",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Some details ?",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 55,
+    "fields": {
+      "name": "Add Emoji To List",
+      "category": 12,
+      "description": "Add some fun and personality to your content",
+      "prompt": "Add matching Emoji to a list of the elements of this subject: {product_name}.\r\n-List of elements :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Main subject Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Your List Here",
+      "user_description_placeholder": "e.g. \r\nTechnologies\r\nArtificial Intelligence \r\nScience",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 56,
+    "fields": {
+      "name": "Bullet Points",
+      "category": 12,
+      "description": "Present information clearly and concisely with bullet points",
+      "prompt": "Give me the  {user_template_name} of this content {user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Your topic or product details Here :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 57,
+    "fields": {
+      "name": "Carousel Post",
+      "category": 12,
+      "description": "Create engaging carousel posts for social media",
+      "prompt": "Generate me a  {user_template_name} about this topic {user_product_description}.\r\nIn this order :\r\n  -CROCHET\r\n  - HOOK\r\n  - CTA\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What is your topic?",
+      "user_description_placeholder": "e.g. Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 58,
+    "fields": {
+      "name": "Viral Youtube Ideas",
+      "category": 12,
+      "description": "Generate a list of entertaining and informative video ideas that have the potential to go viral on YouTube and attract a large following.",
+      "prompt": "Generate me a   Viral YouTube Idea for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 100,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name or topic Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 59,
+    "fields": {
+      "name": "Hashtag Generator",
+      "category": 12,
+      "description": "Generate relevant and engaging hashtags for your social media posts",
+      "prompt": "Generate me the best hashtags for my products named : {product_name}\r\nThese are some features : {user_product_description}\r\nIn this language:{output_language}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product , brand Name or topic Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some features for your product ,Brand or topic:",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 60,
+    "fields": {
+      "name": "Hook Generator",
+      "category": 12,
+      "description": "Grab your reader’s attention with an irresistible hook",
+      "prompt": "Generate me a short and creative Hook about {user_product_description} in {output_language} with a {tone} tone.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What your Hook is about ?",
+      "user_description_placeholder": "e.g. Building a successful startup",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 61,
+    "fields": {
+      "name": "Instagram Captions",
+      "category": 12,
+      "description": "Write engaging captions that complement your Instagram content",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 62,
+    "fields": {
+      "name": "Instagram Product Showcase",
+      "category": 12,
+      "description": "Showcase your product in the best possible light on Instagram",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 64,
+    "fields": {
+      "name": "Launch Your Product",
+      "category": 12,
+      "description": "Make a successful launch for your product with effective copywriting",
+      "prompt": "Generate me a short and creative ad to   Launch  my new product or brand {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 65,
+    "fields": {
+      "name": "Relatable Experiences",
+      "category": 12,
+      "description": "Connect with your audience by sharing relatable experiences through your copy",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 66,
+    "fields": {
+      "name": "Short Text Hook",
+      "category": 12,
+      "description": "Create a hook that captures attention in just a few words",
+      "prompt": "Generate me a creative  {user_template_name} for my product or brand :\r\n-with these Features : {user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Describe your product",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 67,
+    "fields": {
+      "name": "TikTok Brainstorm Topics",
+      "category": 12,
+      "description": "Brainstorm a list of fun and engaging topics that can go viral on TikTok and capture the attention of a large audience.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 68,
+    "fields": {
+      "name": "Video Call To Action",
+      "category": 12,
+      "description": "Create a clear and compelling call-to-action that motivates viewers to take the next step, whether it’s to subscribe, buy, or share.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 69,
+    "fields": {
+      "name": "YouTube Description Intro",
+      "category": 12,
+      "description": "Write a captivating introduction for your YouTube video description that entices viewers to watch and learn more about your content.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 70,
+    "fields": {
+      "name": "YouTube Video Title",
+      "category": 12,
+      "description": "Create a catchy and memorable title for your YouTube video that accurately represents the content and entices viewers to click and watch.",
+      "prompt": "Generate me a  {user_template_name}  about {user_product_description}.\r\n-The title must be in {output_language} with a {tone} tone.",
+      "max_token": 100,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What your youtube video is about",
+      "user_description_placeholder": "e.g. Remembering everything you read !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 71,
+    "fields": {
+      "name": "Adjective Accelerator",
+      "category": 13,
+      "description": "Elevate your writing with powerful adjectives",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 72,
+    "fields": {
+      "name": "Analogy Generator",
+      "category": 13,
+      "description": "Make complex ideas easy to understand",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 73,
+    "fields": {
+      "name": "Bullet Point to Paragraph",
+      "category": 13,
+      "description": "Convert your bullet points into well-structured paragraphs",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 74,
+    "fields": {
+      "name": "Cliffhanger",
+      "category": 13,
+      "description": "Keep your readers engaged with suspenseful cliffhangers",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 75,
+    "fields": {
+      "name": "Essay Intro",
+      "category": 13,
+      "description": "Hook your readers with a captivating essay introduction",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 76,
+    "fields": {
+      "name": "Essay Outline",
+      "category": 13,
+      "description": "Organize your essay for maximum impact",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 77,
+    "fields": {
+      "name": "Explain Like I'm 5",
+      "category": 13,
+      "description": "Explain complex topics in simple terms",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 78,
+    "fields": {
+      "name": "Hero Story Intro",
+      "category": 13,
+      "description": "Introduce yourself or your brand with a captivating hero story",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 79,
+    "fields": {
+      "name": "Hero Story Villain",
+      "category": 13,
+      "description": "Identify the obstacles and challenges your brand overcomes with a hero story",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 80,
+    "fields": {
+      "name": "Passive To Active Voice",
+      "category": 13,
+      "description": "Transform passive sentences into active, engaging ones",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 81,
+    "fields": {
+      "name": "Press Release Intros",
+      "category": 13,
+      "description": "Write powerful press release intros that capture attention and generate interest",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 82,
+    "fields": {
+      "name": "Rewrite With Keywords",
+      "category": 13,
+      "description": "Rewrite your copy with relevant keywords to improve your SEO",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 83,
+    "fields": {
+      "name": "Sentence Rewriter",
+      "category": 13,
+      "description": "Rewrite sentences to improve clarity, conciseness, and impact",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 84,
+    "fields": {
+      "name": "Simplify Sentences",
+      "category": 13,
+      "description": "Simplify complex sentences to make them easier to understand",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 85,
+    "fields": {
+      "name": "Tone Changer",
+      "category": 13,
+      "description": "Change the tone of your message to suit the situation and the person you are addressing, whether it’s serious, funny, or casual.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 86,
+    "fields": {
+      "name": "Two Sentence Stories",
+      "category": 13,
+      "description": "Create a short and impactful story that captures the reader’s attention and leaves a lasting impression.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 87,
+    "fields": {
+      "name": "Verb Booster",
+      "category": 13,
+      "description": "Use powerful action verbs to add impact and energy to your message, making it more memorable and engaging.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 88,
+    "fields": {
+      "name": "Growth Ideas",
+      "category": 14,
+      "description": "Generate ideas for growing your business or personal brand",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 89,
+    "fields": {
+      "name": "Name Generator",
+      "category": 14,
+      "description": "Generate creative and memorable names for your brand or product",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 90,
+    "fields": {
+      "name": "Next Product",
+      "category": 14,
+      "description": "Tease your next product or service to build anticipation with effective copywriting",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 91,
+    "fields": {
+      "name": "Startup Idea",
+      "category": 14,
+      "description": "Use effective copywriting to bring your startup idea to life",
+      "prompt": "Generate me an innovative  {user_template_name} about : {user_product_description}.\r\n-{user_template_name} generated  may be in {output_language} with a {tone} tone.",
+      "max_token": 100,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "What field your startup is about ?",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "What are you passionate about?",
+      "user_description_placeholder": "e.g. Writing books",
+      "is_published": true,
+      "is_product_name_required": false
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 92,
+    "fields": {
+      "name": "Viral Ideas",
+      "category": 14,
+      "description": "Brainstorm a list of creative and unusual ideas that have the potential to go viral and capture the attention of a large audience.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 93,
+    "fields": {
+      "name": "Birthday Card",
+      "category": 15,
+      "description": "Send heartfelt birthday greetings to your loved ones",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 94,
+    "fields": {
+      "name": "Clubhouse Bio",
+      "category": 15,
+      "description": "Craft a compelling bio for your Clubhouse profile",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 95,
+    "fields": {
+      "name": "Cover Letter",
+      "category": 15,
+      "description": "Make a strong first impression with a well-crafted cover letter",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 96,
+    "fields": {
+      "name": "Love Letter",
+      "category": 15,
+      "description": "Write a heartfelt love letter that expresses your feelings",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 97,
+    "fields": {
+      "name": "Resume Bullet Points",
+      "category": 15,
+      "description": "Highlight your achievements and skills with persuasive resume bullet points",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 98,
+    "fields": {
+      "name": "Shower Thoughts",
+      "category": 15,
+      "description": "Tap into your creativity with thought-provoking shower thoughts",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 99,
+    "fields": {
+      "name": "Audience Refiner",
+      "category": 16,
+      "description": "Target your message to the right people",
+      "prompt": "Give me a right audience for my product or brand {product_name} that showcases {user_product_description} in {output_language} with a {tone} tone.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 100,
+    "fields": {
+      "name": "Motto Generator",
+      "category": 16,
+      "description": "Create a memorable motto that captures the essence of your brand",
+      "prompt": "Generate a  creative Motto for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Brand Name",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Brand Description",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 101,
+    "fields": {
+      "name": "Value Proposition",
+      "category": 16,
+      "description": "Craft a compelling value proposition that clearly communicates the unique benefits your product or service offers to your target audience.",
+      "prompt": "Generate me a  {user_template_name} for my product or brand named {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": false,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 102,
+    "fields": {
+      "name": "QUEST Copywriting",
+      "category": 3,
+      "description": "Create copy that tells a compelling story with QUEST - Quandary, Unrest, Encounters, Struggle, Triumph",
+      "prompt": "Generate in {output_language} Language a {tone} {user_template_name} marketing formula for my product in this order :\r\n\r\n-Qualify:\r\n\r\n-Understand :\r\n\r\n-Educate :\r\n\r\n-Transition :\r\n\r\nProduct name: {product_name}.\r\n\r\nProduct Description: {user_product_description}\r\n\r\n{output_language} language {user_template_name}:",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "Your Product Name Here",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "Provide Some description for your product :",
+      "user_description_placeholder": "Best AI copy writing app to make it easier !",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  },
+  {
+    "model": "my_ai.templates",
+    "pk": 103,
+    "fields": {
+      "name": "Linkedin Inspirational Post",
+      "category": 12,
+      "description": "Craft a motivational message that inspires your network to chase their dreams and reach their goals.",
+      "prompt": "Generate me a  {user_template_name} about this topic {product_name}.\r\n-With these features :{user_product_description}.\r\n-In this Language: {output_language}.\r\n-with this tone: {tone}.",
+      "max_token": 255,
+      "temperature": 0.7,
+      "frequency_penalty": 0.0,
+      "model": "text-davinci-003",
+      "product_name_label": "What is your post is about",
+      "product_name_placeholder": "Print.ai",
+      "user_description_label": "List some topics you would like to include :",
+      "user_description_placeholder": "The challenges of entrepreneurship\r\nBecoming a successful entrepreneur\r\nThe power of innovative entrepreneurship",
+      "is_published": true,
+      "is_product_name_required": true
+    }
+  }
+]

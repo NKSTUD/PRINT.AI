@@ -137,6 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media files (User uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -174,8 +175,8 @@ WEBHOOK_ENDPOINT_SECRET = config('WEBHOOK_ENDPOINT_SECRET')
 FACEBOOK_APP_ID = config('FACEBOOK_APP_ID')
 FACEBOOK_APP_SECRET = config('FACEBOOK_APP_SECRET')
 FACEBOOK_ACCESS_TOKEN = config('FACEBOOK_ACCESS_TOKEN')
-
+"""
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
         'https://printai.up.railway.app'
-    ]
+    ]"""

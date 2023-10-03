@@ -1,12 +1,20 @@
 from django import forms
-
 from my_ai.models import ProductDescriptionModel, Language, Tone
 
-language_choices = Language.objects.all().values_list('output_language', 'output_language')
-tone_choices = Tone.objects.all().values_list('tone_type', 'tone_type')
+
+def get_language_choices():
+    return Language.objects.all().values_list('output_language', 'output_language')
+
+
+def get_tone_choices():
+    return Tone.objects.all().values_list('tone_type', 'tone_type')
 
 
 class ProductDescriptionForm(forms.ModelForm):
+    output_language = forms.ChoiceField(widget=forms.Select(attrs={"class": 'form-control'}),
+                                        choices=get_language_choices)
+    tone = forms.ChoiceField(widget=forms.Select(attrs={"class": 'form-control'}), choices=get_tone_choices)
+
     class Meta:
         model = ProductDescriptionModel
         fields = ['project_name', 'product_name', 'user_description', 'output_language', 'tone']
@@ -30,13 +38,6 @@ class ProductDescriptionForm(forms.ModelForm):
                     "id": "user_description",
                     'oninput': 'autoHeight(this)',
                 }
-            ),
-            "output_language": forms.Select(
-                attrs={"class": 'form-control'}, choices=language_choices
-            ),
-            "tone": forms.Select(
-                attrs={"class": 'form-control'}, choices=tone_choices
-            ),
-
+            )
         }
-    # editor = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30,'id': 'editor'}))
+
