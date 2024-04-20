@@ -172,7 +172,7 @@
                             <button
                                     type="submit"
                                     form="InputForm"
-                                    hx-post="{% url 'createProductDescription' %}"
+                                    hx-post="{% url 'create_product_description' %}"
                                     hx-target="closest button"
                                     hx-swap="beforebegin"
                                     {#                                    hx-trigger="click[document.getElementById('user_put').value !=='']"#}
@@ -180,7 +180,9 @@
                                     id="submit">
                                 Submit
                                 <span class=" htmx-indicator spinner-border spinner-border-sm" role="status"
-                                      aria-hidden="true"></span>
+                                      aria-hidden="true">
+
+                                </span>
                             </button>
                         </div>
                     </form>
@@ -194,7 +196,7 @@
                             <span>{{ description.ai_product_name.template_name }}</span>
                         {% endif %}
                         <div class="row d-flex justify-content-center">
-                            <pre>{{ description.ai_answer }}</pre>
+                            <pre>{{ description.ai_answer |safe }}</pre>
                             <button class="btn btn-outline-secondary  btn-sm">copier</button>
                         </div>
                     {% endfor %}
@@ -246,5 +248,10 @@
                 toggleEditorButton.textContent = 'Show editor';
             }
         });
+
+
+
+
+
     </script>
 {% endblock %}

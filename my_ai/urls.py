@@ -1,6 +1,6 @@
 from django.urls import path
 
-from my_ai.views import save_answer, delete_project, createProductDescription, create_product_copy, templates_View, \
+from my_ai.views import save_answer, delete_project, create_product_description, create_product_copy, templates_View, \
     remove_not_committed_answer, productProjectListView, ProjectUpdateView, check_user_description, \
     delete_blank_projects
 
@@ -14,7 +14,7 @@ urlpatterns = [
 ]
 
 htmx_urlpatterns = [
-    path('createProductDescription/', createProductDescription, name='createProductDescription'),
+    path('create_product_description/', create_product_description, name='create_product_description'),
     path('all_templates/', templates_View, name="templates_View"),
     path('remove_not_commited_answer/', remove_not_committed_answer, name="remove_not_committed_answer"),
     path('check_user_description/', check_user_description, name="check_user_description"),

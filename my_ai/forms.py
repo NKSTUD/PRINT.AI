@@ -11,9 +11,11 @@ def get_tone_choices():
 
 
 class ProductDescriptionForm(forms.ModelForm):
-    output_language = forms.ChoiceField(widget=forms.Select(attrs={"class": 'form-control'}),
-                                        choices=get_language_choices)
-    tone = forms.ChoiceField(widget=forms.Select(attrs={"class": 'form-control'}), choices=get_tone_choices)
+    output_language = forms.ModelChoiceField(queryset=Language.objects.all(), empty_label=None,
+                                             widget=forms.Select(attrs={"class": 'form-control'}))
+    tone = forms.ModelChoiceField(queryset=Tone.objects.all(),
+                                  widget=forms.Select(attrs={"class": 'form-control'}),
+                                  empty_label=None)
 
     class Meta:
         model = ProductDescriptionModel
@@ -40,4 +42,3 @@ class ProductDescriptionForm(forms.ModelForm):
                 }
             )
         }
-

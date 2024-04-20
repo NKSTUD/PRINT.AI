@@ -1,12 +1,19 @@
 import os
 
 import openai
+import google.generativeai as genai
 import requests
 from facebook_business import FacebookAdsApi
+from markdown import markdown
+from cmarkgfm import markdown_to_html
 
 from answer_ai import settings
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+
+genai.configure(api_key=GOOGLE_API_KEY)
 
 try:
     def ai_response(user_prompt: str, max_tokens: int,
@@ -42,11 +49,24 @@ except Exception as e:
     raise e
 
 
+class GeminiChat:
+    def __init__(self, prompt: str, model: str = 'gemini-1.5-pro-latest', ):
+        self.model = model
+        self.prompt = prompt
+
+    def gemini_chat_completion(self):
+        model = genai.GenerativeModel(self.model)
+        response = model.generate_content({self.prompt}, stream=False)
+        response.resolve()
+
+        print(response.text)
+        return markdown_to_html(response.text)
+
+    def gemini_token_count(self):
+        total_token = genai.GenerativeModel(self.model).count_tokens(self.prompt)
+        return total_token
 
 
 if __name__ == "__main__":
     print(ai_response('Build ai platform', 10, "text-davinci-003", 0.9))
     print(chat_completion('Build ai platform'))
-
-
-

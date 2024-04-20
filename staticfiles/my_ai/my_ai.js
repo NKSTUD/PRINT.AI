@@ -1,5 +1,6 @@
-function copy_text(i) {
+function copy_text(i,btn) {
     navigator.clipboard.writeText(document.getElementById(i).innerText).then(r => console.log(r));
+    btn.innerText = "copied !"
     Swal.fire({
         title: 'Copié!',
         showConfirmButton: false,

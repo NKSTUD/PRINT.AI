@@ -4,15 +4,16 @@ from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import UpdateView
+from django_htmx.http import HttpResponseClientRedirect
 
-from api import ai_response
+from api import ai_response, GeminiChat
 from memberships.views import is_valid_subscription
 from my_ai.forms import ProductDescriptionForm
-from my_ai.models import ProductDescriptionModel, Templates, TemplateCategory
+from my_ai.models import ProductDescriptionModel, Templates, TemplateCategory, Language
 
-default_project_name = "Untitled"
+DEFAULT_PROJECT_NAME = "Untitled"
 all_templates = Templates.objects.all()
 all_template_categories = TemplateCategory.objects.all()
 most_common_templates = Templates.objects.annotate(num_projects=Count('productdescriptionmodel')).order_by(
@@ -48,9 +49,12 @@ def create_product_copy(request):
     user_template_name = request.GET.get("q", get_default_template().name)
     request.session["user_template_name"] = user_template_name
     template_object = Templates.objects.get(name=user_template_name)
-    project = ProductDescriptionForm(initial={"project_name": default_project_name}).save(commit=False)
+    default_language = Language.get_default_language().pk
+
+    project = ProductDescriptionForm(
+        initial={"project_name": DEFAULT_PROJECT_NAME}).save(commit=False)
     project.client_id = request.user.id
-    project.project_name = default_project_name
+    project.project_name = DEFAULT_PROJECT_NAME
     project.template_name = template_object
     project.save()
     return redirect("update-project", project.id)
@@ -62,19 +66,24 @@ def answer_and_save_word_count(request,
                                number_of_variants: int = 1,
                                frequency_penalty: float = 0.0):
     """THIS FUNCTION counts and saves tokens in database then RETURN A TUPLE OF (AI_ANSWER,TOTAL_TOKENS)"""
-    ai_answers = [ai_response(user_prompt, max_tokens, model,
+    """ai_answers = [ai_response(user_prompt, max_tokens, model,
                               temperature, frequency_penalty) for _ in
-                  range(number_of_variants)]
+                  range(number_of_variants)]"""
     # chat_answers = [chat_completion(user_prompt) for _ in range(number_of_variants)]
-    # print(chat_answers)
-    user = get_user(request)
-    user.number_of_words += sum(total_tokens for _, total_tokens in ai_answers)
-    user.save()
-    return ai_answers
+
+    gemini = GeminiChat(prompt=user_prompt)
+    response = gemini.gemini_chat_completion()
+    total_tokens = gemini.gemini_token_count()
+
+    chat_gemini = [(response, total_tokens) for _ in range(number_of_variants)]
+    # user = get_user(request)
+    # user.number_of_words += sum(total_tokens for _, total_tokens in chat_gemini)
+    # user.save()
+    return chat_gemini
 
 
 @login_required(login_url='/accounts/login')
-def createProductDescription(request):
+def create_product_description(request):
     if request.method != "POST":
         return handle_not_post_request()
     product_form = ProductDescriptionForm(request.POST)
@@ -86,6 +95,9 @@ def createProductDescription(request):
     user_template = get_user_template(request)
     context = get_context_from_form(request, product_form)
     context["ai_answers"] = get_ai_answers(request, user_template, context, product_form)
+
+    print(context)
+
     return render(request, "my_ai/generate_prod_descript.html", context)
 
 
@@ -118,7 +130,6 @@ def get_context_from_form(request, form):
 
 
 def get_ai_answers(request, user_template, context: dict, form):
-
     number_of_variants = int(request.POST.get("number_of_variant", '1'))
     user_prompt = get_user_prompt(user_template, context, form)
     return answer_and_save_word_count(
@@ -259,4 +270,4 @@ def check_user_description(request):
 def delete_blank_projects(request):
     user_blank_projects = blank_projects.filter(client=request.user)
     user_blank_projects.delete()
-    return HttpResponse("Deleted")
+    return HttpResponseClientRedirect(reverse("home"))
