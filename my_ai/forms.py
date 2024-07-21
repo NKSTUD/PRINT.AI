@@ -10,6 +10,7 @@ def get_tone_choices():
     return Tone.objects.all().values_list('tone_type', 'tone_type')
 
 
+
 class ProductDescriptionForm(forms.ModelForm):
     output_language = forms.ModelChoiceField(queryset=Language.objects.all(), empty_label=None,
                                              widget=forms.Select(attrs={"class": 'form-control'}))

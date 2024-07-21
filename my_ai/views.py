@@ -22,7 +22,7 @@ blank_projects = ProductDescriptionModel.objects.filter(aidescription__isnull=Tr
 
 
 def get_default_template():
-    default_template, created = Templates.objects.get_or_create(name="Product Descriptions")
+    default_template, _ = Templates.objects.get_or_create(name="Product Descriptions")
     return default_template
 
 
@@ -49,7 +49,6 @@ def create_product_copy(request):
     user_template_name = request.GET.get("q", get_default_template().name)
     request.session["user_template_name"] = user_template_name
     template_object = Templates.objects.get(name=user_template_name)
-    default_language = Language.get_default_language().pk
 
     project = ProductDescriptionForm(
         initial={"project_name": DEFAULT_PROJECT_NAME}).save(commit=False)
@@ -61,10 +60,10 @@ def create_product_copy(request):
 
 
 def answer_and_save_word_count(request,
-                               user_prompt: str,
-                               model: str, max_tokens: int = 256, temperature: float = 0.7,
-                               number_of_variants: int = 1,
-                               frequency_penalty: float = 0.0):
+                                     user_prompt: str,
+                                     model: str, max_tokens: int = 256, temperature: float = 0.7,
+                                     number_of_variants: int = 1,
+                                     frequency_penalty: float = 0.0):
     """THIS FUNCTION counts and saves tokens in database then RETURN A TUPLE OF (AI_ANSWER,TOTAL_TOKENS)"""
     """ai_answers = [ai_response(user_prompt, max_tokens, model,
                               temperature, frequency_penalty) for _ in
@@ -72,13 +71,13 @@ def answer_and_save_word_count(request,
     # chat_answers = [chat_completion(user_prompt) for _ in range(number_of_variants)]
 
     gemini = GeminiChat(prompt=user_prompt)
-    response = gemini.gemini_chat_completion()
     total_tokens = gemini.gemini_token_count()
 
-    chat_gemini = [(response, total_tokens) for _ in range(number_of_variants)]
+    chat_gemini = [(gemini.gemini_chat_completion(), total_tokens) for _ in range(number_of_variants)]
     # user = get_user(request)
     # user.number_of_words += sum(total_tokens for _, total_tokens in chat_gemini)
     # user.save()
+    print(chat_gemini)
     return chat_gemini
 
 
@@ -234,16 +233,7 @@ class ProjectUpdateView(UpdateView):
 def delete_project(request, pk):
     answer = ProductDescriptionModel.objects.filter(id=pk)
     answer.delete()
-    reverse_lazy('home')
-    all_projects = ProductDescriptionModel.objects.filter(
-        client=request.user).order_by('-updated')
-    paginator = Paginator(all_projects, 12)
-    page_number = request.GET.get('page')
-    projects = paginator.get_page(page_number)
-    context = {"projects": projects, "all_projects": all_projects,
-               "most_common_templates": most_common_templates,
-               "all_template_categories": all_template_categories}
-    return render(request, "index.html", context)
+    return HttpResponseClientRedirect(reverse("home"))
 
 
 def templates_View(request):

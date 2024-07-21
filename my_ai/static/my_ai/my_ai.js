@@ -9,11 +9,12 @@ function copy_text(i) {
 
 }
 
-
 function autoResize() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
+
 }
+
 
 
 

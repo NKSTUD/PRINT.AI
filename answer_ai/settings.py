@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django_htmx",
     'tinymce',
     'adpilot',
+    'rest_framework',
 
 ]
 

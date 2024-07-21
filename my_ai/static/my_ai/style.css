@@ -117,7 +117,6 @@ nav ul li:hover {
     display: grid;
     grid-template-columns: 20% auto;
     position: relative;
-    margin-bottom: 2rem;
 }
 
 
@@ -129,7 +128,7 @@ nav ul li:hover {
 
 #form__column {
     Position: relative;
-    top: 2rem;
+
 }
 
 #tiny__column {
@@ -148,7 +147,6 @@ nav ul li:hover {
     transition: all 0.3s ease;
     overflow-y: scroll;
     overflow-x: hidden;
-
 
 }
 
@@ -218,12 +216,14 @@ textarea {
     color: #2C7A7B;
 }
 
+/*
 
 .swal-modal {
     width: 200px;
     height: 200px;
     border-radius: 5%;
 }
+*/
 
 
 input {
@@ -249,7 +249,7 @@ pre {
     width: 480px;
     white-space: pre-wrap;
     font-family: 'Brandon Grotesque', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .user-profile {
@@ -330,7 +330,11 @@ pre {
     font-size: small;
 }
 
-.swal2-popup {
+#projects__list {
+    margin-bottom: 2rem;
+}
+
+/*.swal2-popup {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,7 +344,7 @@ pre {
     text-align: center;
     font-size: 0.5rem;
 
-}
+}*/
 
 
 .menu-bars {

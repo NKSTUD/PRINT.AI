@@ -56,7 +56,7 @@ class GeminiChat:
 
     def gemini_chat_completion(self):
         model = genai.GenerativeModel(self.model)
-        response = model.generate_content({self.prompt}, stream=False)
+        response = model.generate_content({self.prompt}, stream=True)
         response.resolve()
 
         print(response.text)

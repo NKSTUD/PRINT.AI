@@ -77,8 +77,11 @@
                 <span class="user-profile"></span>
             </div>
         {% endblock %}
+
+    <!-- FORM TEMPLATE -->
         <div id="form__column">
-            <div class="d-flex justify-content-between">
+
+            <div class="d-flex justify-content-between mt-4">
                 <h4>{{ user_template_name }}</h4>
                 <div id="tab-contents" hx-trigger="load">
                 </div>
@@ -116,16 +119,14 @@
                             <div class=" row flex flex-justify-content-between">
                                 <div class="fieldWrapper col mb-4 ">
 
-                                    <label class="form-label fw-semibold mb-0"
-                                           for="{{ form.project.id_for_label }}">
+                                    <label class="form-label fw-semibold mb-0">
                                         Your Project Name Here
                                     </label>
                                     {{ form.project_name | attr:"class:form-control" |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
                                 </div>
                                 <div class="fieldWrapper col">
                                     {{ form.output_language.errors }}
-                                    <label class="form-label fw-semibold mb-0"
-                                           for="{{ form.output_language.id_for_label }}">
+                                    <label class="form-label fw-semibold mb-0">
                                         output language:</label>
                                     {{ form.output_language |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
                                 </div>
@@ -134,8 +135,7 @@
                             {% if template_object.is_product_name_required %}
                                 <div class="fieldWrapper mb-4">
                                     {{ form.product_name.errors }}
-                                    <label class="form-label fw-semibold mb-0"
-                                           for="{{ form.product_name.id_for_label }}">
+                                    <label class="form-label fw-semibold mb-0">
                                         {{ template_object.product_name_label }}
                                         <i data-bs-toggle="tooltip" data-bs-placement="top"
                                            title="This value is required."
@@ -147,14 +147,13 @@
                             <div class="fieldWrapper">
                                 {{ form.user_description.errors }}
                                 <label class="form-label fw-semibold mb-0"
-                                       for="{{ form.user_description.id_for_label }}">{{ template_object.user_description_label }}
+                                       >{{ template_object.user_description_label }}
                                     :</label>
                                 {{ form.user_description |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
                             </div>
                             <div class="fieldWrapper mt-3">
                                 {{ form.tone_type.errors }}
-                                <label class="form-label fw-semibold mb-0"
-                                       for="{{ form.tone_type.id_for_label }}">
+                                <label class="form-label fw-semibold mb-0">
                                     Tone:</label>
                                 {{ form.tone |attr:"hx-post:" | attr:'hx-trigger:keyup changed delay:1.5s' }}
                             </div>
@@ -171,18 +170,15 @@
                             </div>
                             <button
                                     type="submit"
-                                    form="InputForm"
                                     hx-post="{% url 'create_product_description' %}"
                                     hx-target="closest button"
                                     hx-swap="beforebegin"
-                                    {#                                    hx-trigger="click[document.getElementById('user_put').value !=='']"#}
+                                    {#                                   hx-trigger="click[document.getElementById('user_put').value !=='']"#}
                                     class="btn btn-primary rounded-pill mb-4 mt-2"
                                     id="submit">
                                 Submit
                                 <span class=" htmx-indicator spinner-border spinner-border-sm" role="status"
-                                      aria-hidden="true">
-
-                                </span>
+                                      aria-hidden="true"></span>
                             </button>
                         </div>
                     </form>
@@ -196,13 +192,14 @@
                             <span>{{ description.ai_product_name.template_name }}</span>
                         {% endif %}
                         <div class="row d-flex justify-content-center">
-                            <pre>{{ description.ai_answer |safe }}</pre>
+                            <div>{{ description.ai_answer | safe}}</div>
                             <button class="btn btn-outline-secondary  btn-sm">copier</button>
                         </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
+
 
         <div id="tiny__column">
             <button id="tiny_display" class="btn btn-primary" style="display: none">Hide editor</button>
@@ -248,10 +245,5 @@
                 toggleEditorButton.textContent = 'Show editor';
             }
         });
-
-
-
-
-
     </script>
 {% endblock %}
